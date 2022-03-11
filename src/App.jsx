@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import Resume from './components/Resume';
 import Portfolio from './components/Portfolio';
 import './App.css';
@@ -9,6 +10,14 @@ const mainContents = {
 };
 
 const TabNames = ['Resume', 'Portfolio'];
+
+const MainContainer = styled.div`
+  padding: 2rem;
+  margin: 2rem;
+  box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
+  border-radius: 1rem;
+  background-color: #fff;
+`;
 
 function App() {
   const [content, setContent] = useState({ activeTab: 0 });
@@ -29,8 +38,8 @@ function App() {
           </button>
         ))}
       </div>
-      <div className="contents">{mainContents[content.activeTab]}</div>
-      <footer>footer footer footer</footer>
+      <MainContainer>{mainContents[content.activeTab]}</MainContainer>
+      <footer>Ahra Cho ⓒ 2021 All rights reserved.</footer>
     </div>
   );
 }
