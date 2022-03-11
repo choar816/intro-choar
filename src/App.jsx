@@ -8,6 +8,8 @@ const mainContents = {
   1: <Portfolio />,
 };
 
+const TabNames = ['Resume', 'Portfolio'];
+
 function App() {
   const [content, setContent] = useState({ activeTab: 0 });
   function tabHandler(id) {
@@ -21,8 +23,7 @@ function App() {
         <h2>Intro of choar</h2>
       </header>
       <div className="tabs">
-        <button type="button" onClick={() => tabHandler(0)}>Resume</button>
-        <button type="button" onClick={() => tabHandler(1)}>Portfolio</button>
+        {TabNames.map((val, idx) => <button type="button" onClick={() => tabHandler(idx)}>{val}</button>)}
       </div>
       <div className="contents">
         {mainContents[content.activeTab]}
