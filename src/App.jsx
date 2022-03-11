@@ -23,11 +23,13 @@ function App() {
         <h2>Intro of choar</h2>
       </header>
       <div className="tabs">
-        {TabNames.map((val, idx) => <button type="button" onClick={() => tabHandler(idx)}>{val}</button>)}
+        {TabNames.map((val, idx) => (
+          <button type="button" onClick={() => tabHandler(idx)}>
+            {val}
+          </button>
+        ))}
       </div>
-      <div className="contents">
-        {mainContents[content.activeTab]}
-      </div>
+      <div className="contents">{mainContents[content.activeTab]}</div>
       <footer>footer footer footer</footer>
     </div>
   );

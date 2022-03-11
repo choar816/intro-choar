@@ -18,7 +18,13 @@ function Resume() {
           molestiae. Voluptatibus, laudantium.
         </p>
         <ul className="list-contact">
-          {Object.keys(contactList).map((val) => <li key={val}><a target="_blank" rel="noreferrer" href={contactList[val]}>{val}</a></li>)}
+          {Object.keys(contactList).map((val) => (
+            <li key={val}>
+              <a target="_blank" rel="noreferrer" href={contactList[val]}>
+                {val}
+              </a>
+            </li>
+          ))}
         </ul>
       </section>
     </div>
