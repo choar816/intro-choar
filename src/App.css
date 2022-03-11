@@ -1,6 +1,4 @@
-.container h1 {
-  color: pink;
-}
-.container h2 {
-  color: grey;
+/* reset */
+a {
+  text-decoration: none;
 }
