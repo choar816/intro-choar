@@ -7,6 +7,27 @@ const contactList = {
   Mail: 'mailto:ahracho816@gmail.com',
 };
 
+const workList = [
+  {
+    duration: '2020.08. - 2020.12.',
+    position: 'Intern',
+    company: 'Samsung Electronics',
+    description: [
+      'Worked in DIT center, DS division',
+      'Developed android application',
+    ],
+  },
+  {
+    duration: '2019.06. - 2019.08.',
+    position: 'Intern',
+    company: 'Neuromeka',
+    description: [
+      'Research on UI/UX concerning collaborative robots',
+      'Made solutions about how to improve UI/UX of the teaching pendant',
+    ],
+  },
+];
+
 const Section = styled.section`
   overflow: hidden;
 
@@ -28,6 +49,12 @@ const Section = styled.section`
   }
   .list-experience > li + li {
     margin-top: 1rem;
+  }
+  .part-first {
+    flex: 1;
+  }
+  .part-second {
+    flex: 2;
   }
 
   h2 {
@@ -68,38 +95,22 @@ function Resume() {
       <Section>
         <h2>📌 WORK EXPERIENCE</h2>
         <ul className="list-experience">
-          <li>
-            <article className="part-first">
-              <h3>2016.03-2021.08</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </article>
-            <article className="part-second">
-              <h3>blahblah company</h3>
-              <ul>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Officiis, ut?
-                </li>
-              </ul>
-            </article>
-          </li>
-          <li>
-            <article className="part-first">
-              <h3>2016.03-2021.08</h3>
-              <p>Lorem ipsum dolor sit amet.</p>
-            </article>
-            <article className="part-second">
-              <h3>blahblah company</h3>
-              <ul>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Officiis, ut?
-                </li>
-              </ul>
-            </article>
-          </li>
+          {workList.map((work) => (
+            <li>
+              <article className="part-first">
+                <h3>{work.duration}</h3>
+                <p>{work.position}</p>
+              </article>
+              <article className="part-second">
+                <h3>{work.company}</h3>
+                <ul>
+                  {work.description.map((val) => (
+                    <li>{val}</li>
+                  ))}
+                </ul>
+              </article>
+            </li>
+          ))}
         </ul>
       </Section>
       <Section>asdfasdf</Section>
