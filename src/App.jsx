@@ -11,6 +11,22 @@ const mainContents = {
 
 const TabNames = ['Resume', 'Portfolio'];
 
+const TabContainer = styled.div`
+  margin-top: 2.5rem;
+  text-align: center;
+
+  button {
+    padding: 0.3rem 1rem;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #000;
+    border-radius: 1rem;
+  }
+  button + button {
+    margin-left: 2rem;
+  }
+`;
+
 const MainContainer = styled.div`
   padding: 2rem;
   margin: 2rem;
@@ -28,18 +44,21 @@ function App() {
   return (
     <div className="container">
       <header>
-        <h1>Hi!</h1>
-        <h2>Intro of choar</h2>
+        <p>
+          Hi!
+          <br />
+          intro of choar
+        </p>
       </header>
-      <div className="tabs">
+      <TabContainer>
         {TabNames.map((val, idx) => (
           <button type="button" onClick={() => tabHandler(idx)}>
             {val}
           </button>
         ))}
-      </div>
+      </TabContainer>
       <MainContainer>{mainContents[content.activeTab]}</MainContainer>
-      <footer>Ahra Cho ⓒ 2021 All rights reserved.</footer>
+      <footer>Ahra Cho ⓒ 2022 All rights reserved.</footer>
     </div>
   );
 }
