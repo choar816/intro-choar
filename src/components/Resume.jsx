@@ -12,18 +12,30 @@ const workList = [
     duration: '2020.08. - 2020.12.',
     position: 'Intern',
     company: 'Samsung Electronics',
-    description: [
-      'Worked in DIT center, DS division',
-      'Developed android application',
-    ],
+    link: 'https://www.samsung.com/sec/',
+    department: ', DS Division, DIT Center',
+    description: ['Developed android application'],
   },
   {
     duration: '2019.06. - 2019.08.',
     position: 'Intern',
     company: 'Neuromeka',
+    link: 'https://www.neuromeka.com/',
+    department: ', R&D Department',
     description: [
-      'Research on UI/UX concerning collaborative robots',
-      'Made solutions about how to improve UI/UX of the teaching pendant',
+      'Made research and solutions about how to improve UI/UX of the teaching pendant of collaborative robots',
+      'Contributed to IndyEye website development',
+    ],
+  },
+  {
+    duration: '2017.07. - 2017.07.',
+    position: 'Intern',
+    company: 'Dayli Intelligence',
+    link: 'https://dayliai.com/',
+    department: ', Blockchain Department',
+    description: [
+      'Researched on cryptocurrencies',
+      'Translated whitepapers (KOR↔ENG)',
     ],
   },
 ];
@@ -43,13 +55,19 @@ const Section = styled.section`
       }
     }
   }
-  .list-experience > li {
-    display: flex;
-    gap: 1rem;
+  .list-experience {
+    & > li {
+      display: flex;
+      gap: 1rem;
+      & + li {
+        margin-top: 1rem;
+      }
+    }
+    .text-dept {
+      display: inline;
+    }
   }
-  .list-experience > li + li {
-    margin-top: 1rem;
-  }
+
   .part-first {
     flex: 1;
   }
@@ -102,7 +120,8 @@ function Resume() {
                 <p>{work.position}</p>
               </article>
               <article className="part-second">
-                <h3>{work.company}</h3>
+                <a href={work.link}>{work.company}</a>
+                <p className="text-dept">{work.department}</p>
                 <ul>
                   {work.description.map((val) => (
                     <li>{val}</li>
