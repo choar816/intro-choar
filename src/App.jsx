@@ -4,12 +4,16 @@ import Resume from './components/Resume';
 import Portfolio from './components/Portfolio';
 import './App.css';
 
-const mainContents = {
-  0: <Resume />,
-  1: <Portfolio />,
-};
-
-const TabNames = ['Resume', 'Portfolio'];
+const tabContents = [
+  {
+    name: 'Resume',
+    content: <Resume />,
+  },
+  {
+    name: 'Portfolio',
+    content: <Portfolio />,
+  },
+];
 
 const TabContainer = styled.div`
   margin-top: 2.5rem;
@@ -21,9 +25,15 @@ const TabContainer = styled.div`
     background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid #000;
     border-radius: 1rem;
+    
+    & + button {
+      margin-left: 2rem;
+    }
   }
-  button + button {
-    margin-left: 2rem;
+
+  .on {
+    border: 1px solid #5C7AFF;
+    outline: 2px solid #5C7AFF;
   }
 `;
 
@@ -36,10 +46,7 @@ const MainContainer = styled.div`
 `;
 
 function App() {
-  const [content, setContent] = useState({ activeTab: 0 });
-  function tabHandler(id) {
-    setContent({ activeTab: id });
-  }
+  const [tabIdx, setTabIdx] = useState(0);
 
   return (
     <div className="container">
@@ -51,13 +58,17 @@ function App() {
         </p>
       </header>
       <TabContainer>
-        {TabNames.map((val, idx) => (
-          <button type="button" onClick={() => tabHandler(idx)}>
-            {val}
+        {tabContents.map((val, idx) => (
+          <button
+            type="button"
+            onClick={() => setTabIdx(idx)}
+            className={`${idx === tabIdx ? 'on' : ''}`}
+          >
+            {val.name}
           </button>
         ))}
       </TabContainer>
-      <MainContainer>{mainContents[content.activeTab]}</MainContainer>
+      <MainContainer>{tabContents[tabIdx].content}</MainContainer>
       <footer>Ahra Cho ⓒ 2022 All rights reserved.</footer>
     </div>
   );
