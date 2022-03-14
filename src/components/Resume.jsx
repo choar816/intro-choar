@@ -43,10 +43,21 @@ const workList = [
 const Section = styled.section`
   overflow: hidden;
 
-  & + Section {
-    margin-top: 1rem;
+  a {
+    color: #0024C6;
+    transition: all .5s;
+    &:hover {
+      color: #738DFF;
+      text-decoration: underline;
+    }
   }
+
+  & + Section {
+    margin-top: 2.5rem;
+  }
+
   .list-contact {
+    margin-top: 1rem;
     text-align: center;
     li {
       display: inline-block;
@@ -55,7 +66,9 @@ const Section = styled.section`
       }
     }
   }
-  .list-experience {
+
+  .list-work,
+  .list-project {
     & > li {
       display: flex;
       gap: 1rem;
@@ -76,7 +89,7 @@ const Section = styled.section`
   }
 
   h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.3rem;
     font-size: 1.5rem;
   }
 
@@ -112,7 +125,7 @@ function Resume() {
       </Section>
       <Section>
         <h2>📌 WORK EXPERIENCE</h2>
-        <ul className="list-experience">
+        <ul className="list-work">
           {workList.map((work) => (
             <li>
               <article className="part-first">

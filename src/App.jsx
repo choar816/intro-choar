@@ -25,9 +25,13 @@ const TabContainer = styled.div`
     background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid #000;
     border-radius: 1rem;
+    transition: all .2s, background-color .5s;
     
     & + button {
       margin-left: 2rem;
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
     }
   }
 
