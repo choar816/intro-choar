@@ -40,35 +40,6 @@ const workList = [
   },
 ];
 
-const projectList = [
-  {
-    title: 'JS Quiz',
-    summary: 'Website that people can solve javascript quiz',
-    description: [
-      'Duration : 20xx. xx. ~ xx. (x days)',
-      'Skills : JavaScript',
-      'Role : Developed timer related function',
-    ],
-    link: [
-      { type: 'Website', to: 'https://jsquizzz.netlify.app/' },
-      { type: 'GitHub', to: 'https://github.com/useon/js-quiz' },
-    ],
-  },
-  {
-    title: 'Blockchain UX Checklist',
-    summary: 'Lorem ipsum dolor sit amet consectetur adipisicing.',
-    description: [
-      'Duration : 20xx. xx. ~ xx. (x days)',
-      'Skills : JavaScript',
-      'Role : Developed timer related function',
-    ],
-    link: [
-      { type: 'Website', to: 'https://jsquizzz.netlify.app/' },
-      { type: 'GitHub', to: 'https://github.com/useon/js-quiz' },
-    ],
-  },
-];
-
 const Section = styled.section`
   overflow: hidden;
 
@@ -123,21 +94,6 @@ const Section = styled.section`
       flex: 2;
     }
   }
-
-  .list-project {
-    & > li + li {
-      margin-top: 1rem;
-    }
-    h3 {
-      font-size: 1.1rem;
-    }
-    p {
-      text-decoration: underline;
-    }
-    a + a {
-      margin-left: .7rem;
-    }
-  }
 `;
 
 function Resume() {
@@ -183,27 +139,6 @@ function Resume() {
                   ))}
                 </ul>
               </article>
-            </li>
-          ))}
-        </ul>
-      </Section>
-      <Section>
-        <h2>📌 PROJECTS</h2>
-        <ul className="list-project">
-          {projectList.map((proj) => (
-            <li>
-              <h3>{proj.title}</h3>
-              <p>{proj.summary}</p>
-              <ul className="list-with-dash">
-                {proj.description.map((val) => (
-                  <li>{val}</li>
-                ))}
-                <li>
-                  {proj.link.map((val) => (
-                    <a href={val.to}>{val.type}</a>
-                  ))}
-                </li>
-              </ul>
             </li>
           ))}
         </ul>
