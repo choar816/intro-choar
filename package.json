@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/choar816/intro-choar/issues"
   },
-  "homepage": "https://github.com/choar816/intro-choar#readme",
+  "homepage": "https://choar816.github.io/intro-choar",
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
