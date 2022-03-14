@@ -40,6 +40,41 @@ const workList = [
   },
 ];
 
+const eduList = [
+  {
+    duration: '2022.01. - 2022.02.',
+    type: 'Bootcamp',
+    school: '42 Seoul',
+    link: 'https://42seoul.kr/seoul42/main/view',
+    detail: ', La Piscine',
+    description: ['Linux, C'],
+  },
+  {
+    duration: '2021.10. - 2022.01.',
+    type: 'Bootcamp',
+    school: 'Likelion Front-end School',
+    link: '',
+    detail: '',
+    description: ['aaaa', 'bbbb', 'cccc'],
+  },
+  {
+    duration: '2016.03. - 2021.08.',
+    type: 'Bachelor',
+    school: 'POSTECH (Pohang University of Science and Technology',
+    link: '',
+    detail: '',
+    description: ['aaaa', 'bbbb', 'cccc'],
+  },
+  {
+    duration: '2019.09. - 2020.01.',
+    type: 'Exchange student',
+    school: 'Graz University of Technology',
+    link: '',
+    detail: '',
+    description: ['aaaa', 'bbbb', 'cccc'],
+  },
+];
+
 const Section = styled.section`
   overflow: hidden;
 
@@ -55,12 +90,13 @@ const Section = styled.section`
       text-decoration: underline;
     }
   }
-
   h2 {
     margin-bottom: 1.3rem;
     font-size: 1.5rem;
   }
-
+  .text-after-link {
+    display: inline;
+  }
   .list-with-dash {
     list-style: '- ' inside;
   }
@@ -83,9 +119,6 @@ const Section = styled.section`
       & + li {
         margin-top: 1rem;
       }
-    }
-    .text-dept {
-      display: inline;
     }
     .part-first {
       flex: 1;
@@ -132,9 +165,31 @@ function Resume() {
               </article>
               <article className="part-second">
                 <a href={work.link}>{work.company}</a>
-                <p className="text-dept">{work.department}</p>
+                <p className="text-after-link">{work.department}</p>
                 <ul className="list-with-dash">
                   {work.description.map((val) => (
+                    <li>{val}</li>
+                  ))}
+                </ul>
+              </article>
+            </li>
+          ))}
+        </ul>
+      </Section>
+      <Section>
+        <h2>📌 EDUCATION</h2>
+        <ul className="list-work">
+          {eduList.map((edu) => (
+            <li>
+              <article className="part-first">
+                <h3>{edu.duration}</h3>
+                <p>{edu.type}</p>
+              </article>
+              <article className="part-second">
+                <a href={edu.link}>{edu.school}</a>
+                <p className="text-after-link">{edu.detail}</p>
+                <ul className="list-with-dash">
+                  {edu.description.map((val) => (
                     <li>{val}</li>
                   ))}
                 </ul>

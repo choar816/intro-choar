@@ -50,7 +50,7 @@ const MainContainer = styled.div`
 `;
 
 function App() {
-  const [tabIdx, setTabIdx] = useState(1);
+  const [tabIdx, setTabIdx] = useState(0);
 
   return (
     <div className="container">
