@@ -40,14 +40,43 @@ const workList = [
   },
 ];
 
+const projectList = [
+  {
+    title: 'JS Quiz',
+    summary: 'Website that people can solve javascript quiz',
+    description: [
+      'Duration : 20xx. xx. ~ xx. (x days)',
+      'Skills : JavaScript',
+      'Role : Developed timer related function',
+    ],
+    link: [
+      { type: 'Website', to: 'https://jsquizzz.netlify.app/' },
+      { type: 'GitHub', to: 'https://github.com/useon/js-quiz' },
+    ],
+  },
+  {
+    title: 'Blockchain UX Checklist',
+    summary: 'Lorem ipsum dolor sit amet consectetur adipisicing.',
+    description: [
+      'Duration : 20xx. xx. ~ xx. (x days)',
+      'Skills : JavaScript',
+      'Role : Developed timer related function',
+    ],
+    link: [
+      { type: 'Website', to: 'https://jsquizzz.netlify.app/' },
+      { type: 'GitHub', to: 'https://github.com/useon/js-quiz' },
+    ],
+  },
+];
+
 const Section = styled.section`
   overflow: hidden;
 
   a {
-    color: #0024C6;
-    transition: all .5s;
+    color: #0024c6;
+    transition: all 0.5s;
     &:hover {
-      color: #738DFF;
+      color: #738dff;
       text-decoration: underline;
     }
   }
@@ -67,8 +96,7 @@ const Section = styled.section`
     }
   }
 
-  .list-work,
-  .list-project {
+  .list-work {
     & > li {
       display: flex;
       gap: 1rem;
@@ -79,13 +107,30 @@ const Section = styled.section`
     .text-dept {
       display: inline;
     }
+    .part-first {
+      flex: 1;
+    }
+    .part-second {
+      flex: 2;
+    }
   }
 
-  .part-first {
-    flex: 1;
-  }
-  .part-second {
-    flex: 2;
+  .list-project {
+    & > li + li {
+      margin-top: 1rem;
+    }
+    .part-desc {
+      list-style: '- ' inside;
+    }
+    h3 {
+      font-size: 1.1rem;
+    }
+    p {
+      text-decoration: underline;
+    }
+    a + a {
+      margin-left: .7rem;
+    }
   }
 
   h2 {
@@ -145,7 +190,27 @@ function Resume() {
           ))}
         </ul>
       </Section>
-      <Section>asdfasdf</Section>
+      <Section>
+        <h2>📌 PROJECTS</h2>
+        <ul className="list-project">
+          {projectList.map((proj) => (
+            <li>
+              <h3>{proj.title}</h3>
+              <p>{proj.summary}</p>
+              <ul className="part-desc">
+                {proj.description.map((val) => (
+                  <li>{val}</li>
+                ))}
+                <li>
+                  {proj.link.map((val) => (
+                    <a href={val.to}>{val.type}</a>
+                  ))}
+                </li>
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </Section>
       <Section>asdfasdf</Section>
     </>
   );
