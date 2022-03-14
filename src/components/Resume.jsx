@@ -72,6 +72,10 @@ const projectList = [
 const Section = styled.section`
   overflow: hidden;
 
+  & + Section {
+    margin-top: 2.5rem;
+  }
+
   a {
     color: #0024c6;
     transition: all 0.5s;
@@ -81,8 +85,13 @@ const Section = styled.section`
     }
   }
 
-  & + Section {
-    margin-top: 2.5rem;
+  h2 {
+    margin-bottom: 1.3rem;
+    font-size: 1.5rem;
+  }
+
+  .list-with-dash {
+    list-style: '- ' inside;
   }
 
   .list-contact {
@@ -119,9 +128,6 @@ const Section = styled.section`
     & > li + li {
       margin-top: 1rem;
     }
-    .part-desc {
-      list-style: '- ' inside;
-    }
     h3 {
       font-size: 1.1rem;
     }
@@ -131,15 +137,6 @@ const Section = styled.section`
     a + a {
       margin-left: .7rem;
     }
-  }
-
-  h2 {
-    margin-bottom: 1.3rem;
-    font-size: 1.5rem;
-  }
-
-  article ul {
-    list-style: '- ' inside;
   }
 `;
 
@@ -180,7 +177,7 @@ function Resume() {
               <article className="part-second">
                 <a href={work.link}>{work.company}</a>
                 <p className="text-dept">{work.department}</p>
-                <ul>
+                <ul className="list-with-dash">
                   {work.description.map((val) => (
                     <li>{val}</li>
                   ))}
@@ -197,7 +194,7 @@ function Resume() {
             <li>
               <h3>{proj.title}</h3>
               <p>{proj.summary}</p>
-              <ul className="part-desc">
+              <ul className="list-with-dash">
                 {proj.description.map((val) => (
                   <li>{val}</li>
                 ))}
