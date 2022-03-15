@@ -47,6 +47,13 @@ const MainContainer = styled.div`
   box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
   border-radius: 1rem;
   background-color: #fff;
+
+  @media screen and (min-width: 750px) {
+    margin: 4rem;
+  }
+  @media screen and (min-width: 1000px) {
+    margin: 4rem 6rem;
+  }
 `;
 
 function App() {
