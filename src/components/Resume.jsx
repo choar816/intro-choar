@@ -84,6 +84,30 @@ const eduList = [
   },
 ];
 
+const awardList = [
+  {
+    title: 'APRU, Global Health Student Poster Contest (2019.11.)',
+    description: [
+      '3rd place in the undergraduate category',
+      "Researched on 'treatment system for severe dementia patients using multi-sensory stimulation'",
+    ],
+    link: [
+      {
+        type: 'Poster',
+        to: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/09d01d4e-9cd6-473a-99b6-aab834c7895f/PosterContest_%E1%84%8E%E1%85%AC%E1%84%8C%E1%85%A9%E1%86%BC_%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220315%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220315T010731Z&X-Amz-Expires=86400&X-Amz-Signature=10c9029045561f9eaea6d106654102cdde2e6977ccaef98469915ed435c19192&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Poster.pdf%22&x-id=GetObject',
+      },
+      {
+        type: 'Certificate',
+        to: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a785058b-5bb0-4033-8b8d-557efac39cb6/APRU_cert_2020_student_poster_CHO.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220315%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220315T010715Z&X-Amz-Expires=86400&X-Amz-Signature=c4d9b1cb8ebe9a11dfd48d4033e48489851fd652c8fe66924c7f6e5531c6bcd4&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Certificate.pdf%22&x-id=GetObject',
+      },
+      {
+        type: 'Article',
+        to: 'https://cite.postech.ac.kr/postech-students-won-3rd-place-in-the-apru-global-health-student-poster-contest-ug-category/',
+      },
+    ],
+  },
+];
+
 const Section = styled.section`
   overflow: hidden;
 
@@ -134,6 +158,18 @@ const Section = styled.section`
     }
     .part-second {
       flex: 2;
+    }
+  }
+
+  .list-award {
+    h3 {
+      font-size: 1.15rem;
+    }
+    ul {
+      margin-top: 0.5rem;
+    }
+    a + a {
+      margin-left: 0.7rem;
     }
   }
 `;
@@ -211,7 +247,28 @@ function Resume() {
           ))}
         </ul>
       </Section>
-      <Section>asdfasdf</Section>
+      <Section>
+        <h2>📌 AWARDS</h2>
+        <ul className="list-award">
+          {awardList.map((award) => (
+            <li>
+              <h3>{award.title}</h3>
+              <ul className="list-with-dash">
+                {award.description.map((val) => (
+                  <li>{val}</li>
+                ))}
+                <li>
+                  {award.link.map((val) => (
+                    <a target="_blank" rel="noreferrer noopener" href={val.to}>
+                      {val.type}
+                    </a>
+                  ))}
+                </li>
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </Section>
     </>
   );
 }

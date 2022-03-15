@@ -34,7 +34,7 @@ const Container = styled.ul`
   & > li + li {
     margin-top: 2.5rem;
   }
-  
+
   h2 {
     font-size: 1.3rem;
   }
@@ -72,7 +72,9 @@ function Portfolio() {
             ))}
             <li>
               {proj.link.map((val) => (
-                <a href={val.to}>{val.type}</a>
+                <a target="_blank" rel="noreferrer noopener" href={val.to}>
+                  {val.type}
+                </a>
               ))}
             </li>
           </ul>
