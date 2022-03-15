@@ -46,7 +46,9 @@ const eduList = [
     school: '42 Seoul',
     link: 'https://42seoul.kr/seoul42/main/view',
     detail: ', La Piscine',
-    description: ['Developed the ability to make use of Shell, C and algorithms'],
+    description: [
+      'Developed the ability to make use of Shell, C and algorithms',
+    ],
   },
   {
     duration: '2021.10. - 2022.01.',
@@ -171,7 +173,9 @@ function Resume() {
                 <p>{work.position}</p>
               </article>
               <article className="part-second">
-                <a href={work.link}>{work.company}</a>
+                <a target="_blank" rel="noreferrer noopener" href={work.link}>
+                  {work.company}
+                </a>
                 <p className="text-after-link">{work.department}</p>
                 <ul className="list-with-dash">
                   {work.description.map((val) => (
@@ -193,7 +197,9 @@ function Resume() {
                 <p>{edu.type}</p>
               </article>
               <article className="part-second">
-                <a href={edu.link}>{edu.school}</a>
+                <a target="_blank" rel="noreferrer noopener" href={edu.link}>
+                  {edu.school}
+                </a>
                 <p className="text-after-link">{edu.detail}</p>
                 <ul className="list-with-dash">
                   {edu.description.map((val) => (
