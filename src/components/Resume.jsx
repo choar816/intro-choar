@@ -14,7 +14,7 @@ const workList = [
     company: 'Samsung Electronics',
     link: 'https://www.samsung.com/sec/',
     department: ', DS Division, DIT Center',
-    description: ['Developed android application'],
+    description: ['Developed android application (Java, XML)', '** details **'],
   },
   {
     duration: '2019.06. - 2019.08.',
@@ -23,8 +23,7 @@ const workList = [
     link: 'https://www.neuromeka.com/',
     department: ', R&D Department',
     description: [
-      'Made research and solutions about how to improve UI/UX of the teaching pendant of collaborative robots',
-      'Contributed to IndyEye website development',
+      'Researched and made solutions on UI/UX of collaborative robots',
     ],
   },
   {
@@ -47,31 +46,39 @@ const eduList = [
     school: '42 Seoul',
     link: 'https://42seoul.kr/seoul42/main/view',
     detail: ', La Piscine',
-    description: ['Linux, C'],
+    description: ['Developed the ability to make use of Shell, C and algorithms'],
   },
   {
     duration: '2021.10. - 2022.01.',
     type: 'Bootcamp',
     school: 'Likelion Front-end School',
-    link: '',
-    detail: '',
-    description: ['aaaa', 'bbbb', 'cccc'],
+    link: 'https://k-digital.likelion.net/',
+    detail: ', 1st graduate',
+    description: [
+      'Completed web full-stack education course',
+      'Front-end : HTML, CSS, SASS/SCSS, JavaScript, jQuery, Ajax, React',
+      'Back-end : Node, Express, MongoDB, MySQL',
+    ],
   },
   {
     duration: '2016.03. - 2021.08.',
     type: 'Bachelor',
-    school: 'POSTECH (Pohang University of Science and Technology',
-    link: '',
+    school: 'Pohang University of Science and Technology (POSTECH)',
+    link: 'https://postech.ac.kr/eng/',
     detail: '',
-    description: ['aaaa', 'bbbb', 'cccc'],
+    description: [
+      'Bachelor’s degree in Industrial and Management Engineering',
+      'Overall GPA : 3.4/4.3',
+      'Major GPA : 3.52/4.3',
+    ],
   },
   {
     duration: '2019.09. - 2020.01.',
     type: 'Exchange student',
     school: 'Graz University of Technology',
-    link: '',
+    link: 'https://www.tugraz.at/home/',
     detail: '',
-    description: ['aaaa', 'bbbb', 'cccc'],
+    description: ['Exchange student in fall semester in 2019'],
   },
 ];
 
