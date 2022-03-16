@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useSelector, useDispatch } from 'react-redux';
 import Resume from './components/Resume';
 import Portfolio from './components/Portfolio';
 import './App.css';
 
-const tabContents = [
+const tabContents = (lang) => [
   {
     name: 'Resume',
-    content: <Resume />,
+    content: <Resume lang={lang} />,
   },
   {
     name: 'Portfolio',
-    content: <Portfolio />,
+    content: <Portfolio lang={lang} />,
   },
 ];
 
@@ -25,8 +26,8 @@ const TabContainer = styled.div`
     background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid #000;
     border-radius: 1rem;
-    transition: all .2s, background-color .5s;
-    
+    transition: all 0.2s, background-color 0.5s;
+
     & + button {
       margin-left: 2rem;
     }
@@ -36,8 +37,8 @@ const TabContainer = styled.div`
   }
 
   .on {
-    border: 1px solid #5C7AFF;
-    outline: 2px solid #5C7AFF;
+    border: 1px solid #5c7aff;
+    outline: 2px solid #5c7aff;
   }
 `;
 
@@ -58,6 +59,8 @@ const MainContainer = styled.div`
 
 function App() {
   const [tabIdx, setTabIdx] = useState(0);
+  const lang = useSelector((state) => state.language);
+  const dispatch = useDispatch();
 
   return (
     <div className="container">
@@ -67,9 +70,25 @@ function App() {
           <br />
           intro of choar
         </p>
+        <button
+          type="button"
+          onClick={() => {
+            dispatch({ type: 'LANG_TO_EN' });
+          }}
+        >
+          EN
+        </button>
+        <button
+          type="button"
+          onClick={() => {
+            dispatch({ type: 'LANG_TO_KO' });
+          }}
+        >
+          KO
+        </button>
       </header>
       <TabContainer>
-        {tabContents.map((val, idx) => (
+        {tabContents(lang).map((val, idx) => (
           <button
             type="button"
             onClick={() => setTabIdx(idx)}
@@ -79,7 +98,9 @@ function App() {
           </button>
         ))}
       </TabContainer>
-      <MainContainer>{tabContents[tabIdx].content}</MainContainer>
+
+      <MainContainer>{tabContents(lang)[tabIdx].content}</MainContainer>
+
       <footer>Ahra Cho ⓒ 2022 All rights reserved.</footer>
     </div>
   );

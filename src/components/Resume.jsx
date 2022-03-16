@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 
 const contactList = {
   GitHub: 'https://github.com/choar816',
@@ -175,8 +176,10 @@ const Section = styled.section`
 `;
 
 function Resume() {
+  const lang = useSelector((state) => state.language);
   return (
     <>
+      {lang}
       <Section>
         <h2>📌 ABOUT ME</h2>
         <p>
