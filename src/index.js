@@ -5,17 +5,25 @@ import { Provider } from 'react-redux';
 import App from './App';
 
 function reducer(currentState, action) {
-  if (currentState === undefined) {
-    return {
-      language: 'EN',
-    };
-  }
-
   const newState = { ...currentState };
-  if (action.type === 'LANG_TO_KO') {
-    newState.language = 'KO';
-  } else if (action.type === 'LANG_TO_EN') {
-    newState.language = 'EN';
+  switch (action.type) {
+    case 'LANG_TO_KO':
+      newState.lang = 'KO';
+      break;
+    case 'LANG_TO_EN':
+      newState.lang = 'EN';
+      break;
+    case 'DARK':
+      newState.dark = true;
+      break;
+    case 'LIGHT':
+      newState.dark = false;
+      break;
+    default:
+      return {
+        lang: 'EN',
+        dark: false,
+      };
   }
   return newState;
 }

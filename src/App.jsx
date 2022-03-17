@@ -59,33 +59,56 @@ const MainContainer = styled.div`
 
 function App() {
   const [tabIdx, setTabIdx] = useState(0);
-  const lang = useSelector((state) => state.language);
+  const lang = useSelector((state) => state.lang);
+  // const dark = useSelector((state) => state.dark);
   const dispatch = useDispatch();
 
   return (
     <div className="container">
       <header>
+        <section>
+          <article className="container-lang">
+            <button
+              type="button"
+              onClick={() => {
+                dispatch({ type: 'LANG_TO_EN' });
+              }}
+            >
+              🇺🇸 ENG
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                dispatch({ type: 'LANG_TO_KO' });
+              }}
+            >
+              🇰🇷 KOR
+            </button>
+          </article>
+          <article className="container-dark">
+            <button
+              type="button"
+              onClick={() => {
+                dispatch({ type: 'LIGHT' });
+              }}
+            >
+              LIGHT
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                dispatch({ type: 'DARK' });
+              }}
+            >
+              DARK
+            </button>
+          </article>
+        </section>
         <p>
           Hi!
           <br />
           intro of choar
         </p>
-        <button
-          type="button"
-          onClick={() => {
-            dispatch({ type: 'LANG_TO_EN' });
-          }}
-        >
-          EN
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            dispatch({ type: 'LANG_TO_KO' });
-          }}
-        >
-          KO
-        </button>
       </header>
       <TabContainer>
         {tabContents(lang).map((val, idx) => (

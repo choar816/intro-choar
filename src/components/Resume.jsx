@@ -2,6 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 
+const aboutme = {
+  EN: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Error itaque eaque voluptate voluptatibus eum. Totam dolorem fugiat aut autem dicta adipisci rerum, commodi, id labore debitis, possimus ab enim itaque.',
+  KO: '한국어 자기소개',
+};
+
 const contactList = {
   GitHub: 'https://github.com/choar816',
   LinkedIn: 'https://www.linkedin.com/in/ahra-cho-209b6b187/',
@@ -10,6 +15,7 @@ const contactList = {
 
 const workList = [
   {
+    lang: 'EN',
     duration: '2020.08. - 2020.12.',
     position: 'Intern',
     company: 'Samsung Electronics',
@@ -18,6 +24,16 @@ const workList = [
     description: ['Developed android application (Java, XML)', '** details **'],
   },
   {
+    lang: 'KO',
+    duration: '2020.08. - 2020.12.',
+    position: '인턴',
+    company: '삼성전자',
+    link: 'https://www.samsung.com/sec/',
+    department: ', DS부문, DIT센터',
+    description: ['안드로이드 어플리케이션 개발 (Java, XML)', '** details **'],
+  },
+  {
+    lang: 'EN',
     duration: '2019.06. - 2019.08.',
     position: 'Intern',
     company: 'Neuromeka',
@@ -28,6 +44,18 @@ const workList = [
     ],
   },
   {
+    lang: 'KO',
+    duration: '2019.06. - 2019.08.',
+    position: '인턴',
+    company: '뉴로메카',
+    link: 'https://www.neuromeka.com/',
+    department: ', 연구개발부서',
+    description: [
+      '협동로봇 UI/UX 리서치 및 솔루션 제안',
+    ],
+  },
+  {
+    lang: 'EN',
     duration: '2017.07. - 2017.07.',
     position: 'Intern',
     company: 'Dayli Intelligence',
@@ -176,18 +204,12 @@ const Section = styled.section`
 `;
 
 function Resume() {
-  const lang = useSelector((state) => state.language);
+  const lang = useSelector((state) => state.lang);
   return (
     <>
-      {lang}
       <Section>
         <h2>📌 ABOUT ME</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
-          culpa odio beatae in minus nam necessitatibus dolores rerum, deserunt
-          labore dignissimos nemo, distinctio quae temporibus deleniti fuga
-          molestiae. Voluptatibus, laudantium.
-        </p>
+        <p>{aboutme[lang]}</p>
         <ul className="list-contact">
           {Object.keys(contactList).map((val) => (
             <li key={val}>
@@ -205,25 +227,27 @@ function Resume() {
       <Section>
         <h2>📌 WORK EXPERIENCE</h2>
         <ul className="list-work">
-          {workList.map((work) => (
-            <li>
-              <article className="part-first">
-                <h3>{work.duration}</h3>
-                <p>{work.position}</p>
-              </article>
-              <article className="part-second">
-                <a target="_blank" rel="noreferrer noopener" href={work.link}>
-                  {work.company}
-                </a>
-                <p className="text-after-link">{work.department}</p>
-                <ul className="list-with-dash">
-                  {work.description.map((val) => (
-                    <li>{val}</li>
-                  ))}
-                </ul>
-              </article>
-            </li>
-          ))}
+          {workList
+            .filter((work) => work.lang === lang)
+            .map((work) => (
+              <li>
+                <article className="part-first">
+                  <h3>{work.duration}</h3>
+                  <p>{work.position}</p>
+                </article>
+                <article className="part-second">
+                  <a target="_blank" rel="noreferrer noopener" href={work.link}>
+                    {work.company}
+                  </a>
+                  <p className="text-after-link">{work.department}</p>
+                  <ul className="list-with-dash">
+                    {work.description.map((val) => (
+                      <li>{val}</li>
+                    ))}
+                  </ul>
+                </article>
+              </li>
+            ))}
         </ul>
       </Section>
       <Section>
