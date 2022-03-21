@@ -71,6 +71,17 @@ const MainContainer = styled.div`
   box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
   border-radius: 1rem;
   background-color: #fff;
+  transition: all 0.5s;
+  ${({ dark }) => dark && `
+    background-color: #000;
+    color: #fff;
+    a {
+      color: #738dff;
+      &:hover {
+        color: #a5b6ff;
+      }
+    }
+  `}
 
   @media screen and (min-width: 750px) {
     margin: 4rem;
@@ -144,11 +155,9 @@ function App() {
           </button>
         ))}
       </TabContainer>
-
-      <MainContainer>
+      <MainContainer dark={dark}>
         {tabContents(lang)[tabIdx].content}
       </MainContainer>
-
       <footer>Ahra Cho ⓒ 2022 All rights reserved.</footer>
     </div>
   );
