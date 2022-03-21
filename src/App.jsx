@@ -42,6 +42,29 @@ const TabContainer = styled.div`
   }
 `;
 
+const SettingContainer = styled.div`
+  article {
+    display: inline-block;
+    & + article {
+      margin-left: 1rem;
+    }
+  }
+
+  button {
+    width: 4rem;
+    border: 1px solid #000;
+    background-color: rgba(255, 255, 255, 0.5);
+    line-height: 1rem;
+    & + button {
+      border-left: none;
+    }
+  }
+
+  .on {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+`;
+
 const MainContainer = styled.div`
   padding: 2rem;
   margin: 2rem;
@@ -60,19 +83,20 @@ const MainContainer = styled.div`
 function App() {
   const [tabIdx, setTabIdx] = useState(0);
   const lang = useSelector((state) => state.lang);
-  // const dark = useSelector((state) => state.dark);
+  const dark = useSelector((state) => state.dark);
   const dispatch = useDispatch();
 
   return (
     <div className="container">
       <header>
-        <section>
+        <SettingContainer>
           <article className="container-lang">
             <button
               type="button"
               onClick={() => {
                 dispatch({ type: 'LANG_TO_EN' });
               }}
+              className={`${lang === 'EN' ? 'on' : ''}`}
             >
               🇺🇸 ENG
             </button>
@@ -81,6 +105,7 @@ function App() {
               onClick={() => {
                 dispatch({ type: 'LANG_TO_KO' });
               }}
+              className={`${lang === 'KO' ? 'on' : ''}`}
             >
               🇰🇷 KOR
             </button>
@@ -91,6 +116,7 @@ function App() {
               onClick={() => {
                 dispatch({ type: 'LIGHT' });
               }}
+              className={`${dark ? '' : 'on'}`}
             >
               LIGHT
             </button>
@@ -99,16 +125,13 @@ function App() {
               onClick={() => {
                 dispatch({ type: 'DARK' });
               }}
+              className={`${dark ? 'on' : ''}`}
             >
               DARK
             </button>
           </article>
-        </section>
-        <p>
-          Hi!
-          <br />
-          intro of choar
-        </p>
+        </SettingContainer>
+        <p>Introduction of Ahra Cho</p>
       </header>
       <TabContainer>
         {tabContents(lang).map((val, idx) => (
@@ -122,7 +145,9 @@ function App() {
         ))}
       </TabContainer>
 
-      <MainContainer>{tabContents(lang)[tabIdx].content}</MainContainer>
+      <MainContainer>
+        {tabContents(lang)[tabIdx].content}
+      </MainContainer>
 
       <footer>Ahra Cho ⓒ 2022 All rights reserved.</footer>
     </div>
