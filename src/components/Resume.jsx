@@ -16,12 +16,14 @@ const contactList = [
     GitHub: 'https://github.com/choar816',
     LinkedIn: 'https://www.linkedin.com/in/ahra-cho-209b6b187/',
     Mail: 'mailto:ahracho816@gmail.com',
+    Blog: 'https://choar816.tistory.com/',
   },
   {
     lang: 'KO',
     깃허브: 'https://github.com/choar816',
     링크드인: 'https://www.linkedin.com/in/ahra-cho-209b6b187/',
     이메일: 'mailto:ahracho816@gmail.com',
+    블로그: 'https://choar816.tistory.com/',
   },
 ];
 
