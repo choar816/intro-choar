@@ -108,7 +108,7 @@ function App() {
   const dispatch = useDispatch();
 
   return (
-    <Container>
+    <Container dark={dark}>
       <header>
         <SettingContainer>
           <article className="container-lang">
