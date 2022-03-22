@@ -19,10 +19,10 @@ const tabContents = (lang) => [
 const Container = styled.div`
   background: rgb(169,255,229);
   background: linear-gradient(90deg, rgba(169,255,229,1) 0%, rgba(168,184,255,1) 100%);
-  transition: background 0.5s;
+  transition: background 0.5s; // NOT WORKING
   ${({ dark }) => dark && `
-    background: rgb(28,159,119);
-    background: linear-gradient(90deg, rgba(28,159,119,1) 0%, rgba(23,44,139,1) 100%);
+    background: rgb(37,179,135);
+    background: linear-gradient(90deg, rgba(37,179,135,1) 0%, rgba(55,88,236,1) 100%);
   `}
 `;
 
