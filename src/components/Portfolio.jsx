@@ -18,6 +18,20 @@ const projectList = [
     ],
   },
   {
+    lang: 'KO',
+    title: 'JS 퀴즈 (팀 프로젝트)',
+    summary: '자바스크립트 문법 퀴즈를 풀며 실력을 확인할 수 있는 웹사이트',
+    description: [
+      '진행 기간 : 2021.12. (3주)',
+      '사용 기술 : HTML, CSS, JavaScript, Firebase, Chart.js',
+      '역할 : 타이머 관련 기능 개발',
+    ],
+    link: [
+      { type: '웹사이트', to: 'https://jsquizzz.netlify.app/' },
+      { type: '깃허브', to: 'https://github.com/useon/js-quiz' },
+    ],
+  },
+  {
     lang: 'EN',
     title: 'Blockchain UX Checklist',
     summary:
@@ -36,6 +50,24 @@ const projectList = [
     ],
   },
   {
+    lang: 'KO',
+    title: '블록체인 UX 체크리스트',
+    summary:
+      "포항공과대학교 EDEN Lab.에서 기획한 '블록체인 서비스의 개발자 및 운영자를 위한 UX 가이드라인 애플리케이션'의 안드로이드 어플리케이션",
+    description: [
+      '진행 기간 : 2021.06. ~ 2021.09.',
+      '사용 기술 : Android(Java)',
+      '역할 : 개발 전체',
+    ],
+    link: [
+      {
+        type: '플레이스토어',
+        to: 'https://play.google.com/store/apps/details?id=com.eden.blue',
+      },
+      { type: '깃허브', to: 'https://github.com/choar816/blockchain-ux-app' },
+    ],
+  },
+  {
     lang: 'EN',
     title: 'Landing Page',
     summary: 'Landing page that can be used for various purposes',
@@ -47,6 +79,20 @@ const projectList = [
     link: [
       { type: 'Website', to: 'https://choar816.github.io/landing-page/' },
       { type: 'GitHub', to: 'https://github.com/choar816/landing-page' },
+    ],
+  },
+  {
+    lang: 'KO',
+    title: '랜딩 페이지',
+    summary: '개인 포트폴리오 등 다양한 목적으로 사용 가능한 랜딩 페이지',
+    description: [
+      '진행 기간 : 2021.12. ~ 2022.01. (1주)',
+      '사용 기술 : HTML, SCSS, JavaScript',
+      '역할 : 개발 전체',
+    ],
+    link: [
+      { type: '웹사이트', to: 'https://choar816.github.io/landing-page/' },
+      { type: '깃허브', to: 'https://github.com/choar816/landing-page' },
     ],
   },
   {
@@ -62,6 +108,23 @@ const projectList = [
     link: [
       {
         type: 'Google Play Store',
+        to: 'https://play.google.com/store/apps/details?id=com.joebrothers.lotterygenerator',
+      },
+    ],
+  },
+  {
+    lang: 'KO',
+    title: '로또 번호 생성기',
+    summary:
+      '로또 번호를 랜덤하게 생성 및 기록해주는 모바일 어플리케이션',
+    description: [
+      '진행 기간 : 2021.08. (1주)',
+      '사용 기술 : React Native, JavaScript, Expo',
+      '역할 : 프론트엔드 개발 & 배포',
+    ],
+    link: [
+      {
+        type: '플레이스토어',
         to: 'https://play.google.com/store/apps/details?id=com.joebrothers.lotterygenerator',
       },
     ],
@@ -88,6 +151,27 @@ const projectList = [
     ],
   },
   {
+    lang: 'KO',
+    title: '1만 시간의 법칙',
+    summary:
+      '위니브 1만 시간의 법칙의 클론 웹사이트',
+    description: [
+      '진행 기간 : 2021.11. ~ 2021.12. (3일)',
+      '사용 기술 : HTML, CSS, JavaScript',
+      '역할 : 개발 전체',
+    ],
+    link: [
+      {
+        type: '웹사이트',
+        to: 'https://choar816.github.io/10000hours-rule/',
+      },
+      {
+        type: '깃허브',
+        to: 'https://choar816.github.io/10000hours-rule/',
+      },
+    ],
+  },
+  {
     lang: 'EN',
     title: 'Coolzzin Test',
     summary:
@@ -104,6 +188,27 @@ const projectList = [
       },
       {
         type: 'GitHub',
+        to: 'https://github.com/choar816/coolzzin-test',
+      },
+    ],
+  },
+  {
+    lang: 'KO',
+    title: '쿨찐 테스트',
+    summary:
+      '메인 페이지, 문제 페이지, 결과 페이지로 이루어진 쿨찐 테스트 웹사이트',
+    description: [
+      '진행 기간 : 2021.11. ~ 2021.12. (3일)',
+      '사용 기술 : Bootstrap, JavaScript',
+      '역할 : UI 수정 (Bootstrap) & 광고 부착 (Kakao Adfit) & 배포 (Netlify)',
+    ],
+    link: [
+      {
+        type: '웹사이트',
+        to: 'https://test-coolzzin.netlify.app/',
+      },
+      {
+        type: '깃허브',
         to: 'https://github.com/choar816/coolzzin-test',
       },
     ],
