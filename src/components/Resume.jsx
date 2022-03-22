@@ -27,6 +27,17 @@ const contactList = [
   },
 ];
 
+const skillList = {
+  EN: {
+    'Front-end': 'HTML, CSS, Sass/Scss, JavaScript, React',
+    Algorithm: 'C/C++, Python',
+  },
+  KO: {
+    프론트엔드: 'HTML, CSS, Sass/Scss, JavaScript, React',
+    알고리즘: 'C/C++, Python',
+  },
+};
+
 const workList = [
   {
     lang: 'EN',
@@ -340,6 +351,14 @@ function Resume() {
                 </a>
               </li>
             ))}
+        </ul>
+      </Section>
+      <Section>
+        <h2>📌 SKILL SET</h2>
+        <ul className="list-with-dash">
+          {Object.entries(skillList[lang]).map((val) => (
+            <li>{val[0]} : {val[1]}</li>
+          ))}
         </ul>
       </Section>
       <Section>
