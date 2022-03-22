@@ -92,7 +92,7 @@ const MainContainer = styled.div`
 `;
 
 function App() {
-  const [tabIdx, setTabIdx] = useState(0);
+  const [tabIdx, setTabIdx] = useState(1);
   const lang = useSelector((state) => state.lang);
   const dark = useSelector((state) => state.dark);
   const dispatch = useDispatch();
