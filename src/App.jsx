@@ -16,6 +16,16 @@ const tabContents = (lang) => [
   },
 ];
 
+const Container = styled.div`
+  background: rgb(169,255,229);
+  background: linear-gradient(90deg, rgba(169,255,229,1) 0%, rgba(168,184,255,1) 100%);
+  transition: background 0.5s; // NOT WORKING
+  ${({ dark }) => dark && `
+    background: rgb(37,179,135);
+    background: linear-gradient(90deg, rgba(37,179,135,1) 0%, rgba(55,88,236,1) 100%);
+  `}
+`;
+
 const TabContainer = styled.div`
   margin-top: 2.5rem;
   text-align: center;
@@ -92,13 +102,13 @@ const MainContainer = styled.div`
 `;
 
 function App() {
-  const [tabIdx, setTabIdx] = useState(1);
+  const [tabIdx, setTabIdx] = useState(0);
   const lang = useSelector((state) => state.lang);
   const dark = useSelector((state) => state.dark);
   const dispatch = useDispatch();
 
   return (
-    <div className="container">
+    <Container dark={dark}>
       <header>
         <SettingContainer>
           <article className="container-lang">
@@ -127,7 +137,7 @@ function App() {
               onClick={() => {
                 dispatch({ type: 'LIGHT' });
               }}
-              className={`${dark ? '' : 'on'}`}
+              className={`${!dark ? 'on' : ''}`}
             >
               LIGHT
             </button>
@@ -159,7 +169,7 @@ function App() {
         {tabContents(lang)[tabIdx].content}
       </MainContainer>
       <footer>Ahra Cho ⓒ 2022 All rights reserved.</footer>
-    </div>
+    </Container>
   );
 }
 
