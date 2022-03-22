@@ -17,8 +17,12 @@ const tabContents = (lang) => [
 ];
 
 const Container = styled.div`
-  background: rgb(169,255,229);
-  background: linear-gradient(90deg, rgba(169,255,229,1) 0%, rgba(168,184,255,1) 100%);
+  background: rgb(169, 255, 229);
+  background: linear-gradient(
+    90deg,
+    rgba(169, 255, 229, 1) 0%,
+    rgba(168, 184, 255, 1) 100%
+  );
   transition: background 0.5s; // NOT WORKING
   ${({ dark }) => dark && `
     background: rgb(37,179,135);
@@ -52,7 +56,15 @@ const TabContainer = styled.div`
   }
 `;
 
-const SettingContainer = styled.div`
+const HeaderContainer = styled.div`
+  padding-top: 3rem;
+  font-size: 1.5rem;
+  text-align: center;
+
+  p {
+    margin-top: 2rem;
+  }
+
   article {
     display: inline-block;
     & + article {
@@ -65,6 +77,10 @@ const SettingContainer = styled.div`
     border: 1px solid #000;
     background-color: rgba(255, 255, 255, 0.5);
     line-height: 1rem;
+    transition: background-color 0.5s;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
     & + button {
       border-left: none;
     }
@@ -109,51 +125,49 @@ function App() {
 
   return (
     <Container dark={dark}>
-      <header>
-        <SettingContainer>
-          <article className="container-lang">
-            <button
-              type="button"
-              onClick={() => {
-                dispatch({ type: 'LANG_TO_EN' });
-              }}
-              className={`${lang === 'EN' ? 'on' : ''}`}
-            >
-              🇺🇸 ENG
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                dispatch({ type: 'LANG_TO_KO' });
-              }}
-              className={`${lang === 'KO' ? 'on' : ''}`}
-            >
-              🇰🇷 KOR
-            </button>
-          </article>
-          <article className="container-dark">
-            <button
-              type="button"
-              onClick={() => {
-                dispatch({ type: 'LIGHT' });
-              }}
-              className={`${!dark ? 'on' : ''}`}
-            >
-              LIGHT
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                dispatch({ type: 'DARK' });
-              }}
-              className={`${dark ? 'on' : ''}`}
-            >
-              DARK
-            </button>
-          </article>
-        </SettingContainer>
+      <HeaderContainer>
+        <article className="container-lang">
+          <button
+            type="button"
+            onClick={() => {
+              dispatch({ type: 'LANG_TO_EN' });
+            }}
+            className={`${lang === 'EN' ? 'on' : ''}`}
+          >
+            🇺🇸 ENG
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              dispatch({ type: 'LANG_TO_KO' });
+            }}
+            className={`${lang === 'KO' ? 'on' : ''}`}
+          >
+            🇰🇷 KOR
+          </button>
+        </article>
+        <article className="container-dark">
+          <button
+            type="button"
+            onClick={() => {
+              dispatch({ type: 'LIGHT' });
+            }}
+            className={`${!dark ? 'on' : ''}`}
+          >
+            LIGHT
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              dispatch({ type: 'DARK' });
+            }}
+            className={`${dark ? 'on' : ''}`}
+          >
+            DARK
+          </button>
+        </article>
         <p>Introduction of Ahra Cho</p>
-      </header>
+      </HeaderContainer>
       <TabContainer>
         {tabContents(lang).map((val, idx) => (
           <button
