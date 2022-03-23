@@ -5,14 +5,14 @@ import Resume from './components/Resume';
 import Portfolio from './components/Portfolio';
 import './App.css';
 
-const tabContents = (lang) => [
+const tabContents = [
   {
     name: 'Resume',
-    content: <Resume lang={lang} />,
+    content: <Resume />,
   },
   {
     name: 'Portfolio',
-    content: <Portfolio lang={lang} />,
+    content: <Portfolio />,
   },
 ];
 
@@ -23,6 +23,7 @@ const Container = styled.div`
     rgba(169, 255, 229, 1) 0%,
     rgba(168, 184, 255, 1) 100%
   );
+
   transition: background 0.5s; // NOT WORKING
   ${({ dark }) => dark && `
     background: rgb(37,179,135);
@@ -169,7 +170,7 @@ function App() {
         <p>Introduction of Ahra Cho</p>
       </HeaderContainer>
       <TabContainer>
-        {tabContents(lang).map((val, idx) => (
+        {tabContents.map((val, idx) => (
           <button
             type="button"
             onClick={() => setTabIdx(idx)}
@@ -180,7 +181,7 @@ function App() {
         ))}
       </TabContainer>
       <MainContainer dark={dark}>
-        {tabContents(lang)[tabIdx].content}
+        {tabContents[tabIdx].content}
       </MainContainer>
       <footer>Ahra Cho ⓒ 2022 All rights reserved.</footer>
     </Container>
