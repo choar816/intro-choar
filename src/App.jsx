@@ -16,19 +16,40 @@ const tabContents = [
   },
 ];
 
-const Container = styled.div`
-  background: rgb(169, 255, 229);
+const BackgroundLight = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
     90deg,
     rgba(169, 255, 229, 1) 0%,
     rgba(168, 184, 255, 1) 100%
   );
+  transition: all 0.5s;
+  opacity: ${({ dark }) => (dark ? 0 : 1)};
+`;
 
-  transition: background 0.5s; // NOT WORKING
-  ${({ dark }) => dark && `
-    background: rgb(37,179,135);
-    background: linear-gradient(90deg, rgba(37,179,135,1) 0%, rgba(55,88,236,1) 100%);
-  `}
+const BackgroundDark = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(37, 179, 135, 1) 0%,
+    rgba(55, 88, 236, 1) 100%
+  );
+  transition: all 0.5s;
+  opacity: ${({ dark }) => (dark ? 1 : 0)};
 `;
 
 const TabContainer = styled.div`
@@ -125,7 +146,9 @@ function App() {
   const dispatch = useDispatch();
 
   return (
-    <Container dark={dark}>
+    <>
+      <BackgroundLight dark={dark} />
+      <BackgroundDark dark={dark} />
       <HeaderContainer>
         <article className="container-lang">
           <button
@@ -180,11 +203,9 @@ function App() {
           </button>
         ))}
       </TabContainer>
-      <MainContainer dark={dark}>
-        {tabContents[tabIdx].content}
-      </MainContainer>
+      <MainContainer dark={dark}>{tabContents[tabIdx].content}</MainContainer>
       <footer>Ahra Cho ⓒ 2022 All rights reserved.</footer>
-    </Container>
+    </>
   );
 }
 
