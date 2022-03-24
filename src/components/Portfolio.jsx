@@ -5,6 +5,34 @@ import { useSelector } from 'react-redux';
 const projectList = [
   {
     lang: 'EN',
+    title: 'Intro of choar',
+    summary: 'Website where shows my resume and portfolio',
+    description: [
+      'Duration : 2022.03. (2 weeks)',
+      'Skills : React, Redux',
+      'Role : Designed & Developed everything',
+    ],
+    link: [
+      { type: 'Website', to: 'https://choar816.github.io/intro-choar/' },
+      { type: 'GitHub', to: 'https://github.com/choar816/intro-choar' },
+    ],
+  },
+  {
+    lang: 'KO',
+    title: '나의 인트로',
+    summary: '이력서와 포트폴리오를 정리한 웹사이트',
+    description: [
+      '진행 기간 : 2022.03. (2주)',
+      '사용 기술 : React, Redux',
+      '역할 : 디자인, 개발 전체',
+    ],
+    link: [
+      { type: '웹사이트', to: 'https://choar816.github.io/intro-choar/' },
+      { type: '깃허브', to: 'https://github.com/choar816/intro-choar' },
+    ],
+  },
+  {
+    lang: 'EN',
     title: 'JS Quiz (Team Project)',
     summary: 'Website where people can solve JavaScript quizs and check scores',
     description: [
