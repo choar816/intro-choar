@@ -10,22 +10,20 @@ const aboutme = {
       민첩하고 체계적인 프론트엔드 개발자로 나아가려 하는 조아라입니다.`,
 };
 
-const contactList = [
-  {
-    lang: 'EN',
+const contactList = {
+  EN: {
     GitHub: 'https://github.com/choar816',
     LinkedIn: 'https://www.linkedin.com/in/ahra-cho-209b6b187/',
     Mail: 'mailto:ahracho816@gmail.com',
     Blog: 'https://choar816.tistory.com/',
   },
-  {
-    lang: 'KO',
+  KO: {
     깃허브: 'https://github.com/choar816',
     링크드인: 'https://www.linkedin.com/in/ahra-cho-209b6b187/',
     이메일: 'mailto:ahracho816@gmail.com',
     블로그: 'https://choar816.tistory.com/',
   },
-];
+};
 
 const skillList = {
   EN: {
@@ -259,75 +257,6 @@ const awardList = [
   },
 ];
 
-const Section = styled.section`
-  overflow: hidden;
-
-  & + Section {
-    margin-top: 2.5rem;
-  }
-
-  a {
-    color: #0024c6;
-    transition: all 0.5s;
-    &:hover {
-      color: #738dff;
-      text-decoration: underline;
-    }
-  }
-  h2 {
-    margin-bottom: 1.3rem;
-    font-size: 1.5rem;
-  }
-  p {
-    white-space: pre-line;
-  }
-  .text-after-link {
-    display: inline;
-  }
-  .list-with-dash {
-    list-style: '- ' inside;
-  }
-
-  .list-contact {
-    margin-top: 1rem;
-    text-align: center;
-    li {
-      display: inline-block;
-      & + li {
-        margin-left: 1rem;
-      }
-    }
-  }
-
-  .list-work {
-    & > li {
-      display: flex;
-      gap: 1rem;
-      & + li {
-        margin-top: 1rem;
-      }
-    }
-    .part-first {
-      flex: 1;
-    }
-    .part-second {
-      flex: 2;
-    }
-  }
-
-  .list-award {
-    h3 {
-      font-size: 1.15rem;
-    }
-    ul {
-      margin-top: 0.5rem;
-    }
-    a + a {
-      margin-left: 0.7rem;
-    }
-  }
-`;
-
 function Resume() {
   const lang = useSelector((state) => state.lang);
   return (
@@ -336,28 +265,26 @@ function Resume() {
         <h2>📌 ABOUT ME</h2>
         <p>{aboutme[lang]}</p>
         <ul className="list-contact">
-          {Object.keys(
-            contactList.filter((contact) => contact.lang === lang)[0],
-          )
-            .filter((key) => key !== 'lang')
-            .map((val) => (
-              <li key={val}>
-                <a
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  href={contactList[val]}
-                >
-                  {val}
-                </a>
-              </li>
-            ))}
+          {Object.entries(contactList[lang]).map(([key, val]) => (
+            <li key={key}>
+              <a
+                target="_blank"
+                rel="noreferrer noopener"
+                href={val}
+              >
+                {key}
+              </a>
+            </li>
+          ))}
         </ul>
       </Section>
       <Section>
         <h2>📌 SKILL SET</h2>
         <ul className="list-with-dash">
           {Object.entries(skillList[lang]).map((val) => (
-            <li>{val[0]} : {val[1]}</li>
+            <li>
+              {`${val[0]} : ${val[1]}`}
+            </li>
           ))}
         </ul>
       </Section>
@@ -446,3 +373,72 @@ function Resume() {
 }
 
 export default Resume;
+
+const Section = styled.section`
+  overflow: hidden;
+
+  & + Section {
+    margin-top: 2.5rem;
+  }
+
+  a {
+    color: #0024c6;
+    transition: all 0.5s;
+    &:hover {
+      color: #738dff;
+      text-decoration: underline;
+    }
+  }
+  h2 {
+    margin-bottom: 1.3rem;
+    font-size: 1.5rem;
+  }
+  p {
+    white-space: pre-line;
+  }
+  .text-after-link {
+    display: inline;
+  }
+  .list-with-dash {
+    list-style: '- ' inside;
+  }
+
+  .list-contact {
+    margin-top: 1rem;
+    text-align: center;
+    li {
+      display: inline-block;
+      & + li {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .list-work {
+    & > li {
+      display: flex;
+      gap: 1rem;
+      & + li {
+        margin-top: 1rem;
+      }
+    }
+    .part-first {
+      flex: 1;
+    }
+    .part-second {
+      flex: 2;
+    }
+  }
+
+  .list-award {
+    h3 {
+      font-size: 1.15rem;
+    }
+    ul {
+      margin-top: 0.5rem;
+    }
+    a + a {
+      margin-left: 0.7rem;
+    }
+  }
+`;
