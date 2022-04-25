@@ -174,7 +174,7 @@ const projectList = [
       },
       {
         type: 'GitHub',
-        to: 'https://choar816.github.io/10000hours-rule/',
+        to: 'https://github.com/choar816/10000hours-rule',
       },
     ],
   },
@@ -195,7 +195,7 @@ const projectList = [
       },
       {
         type: '깃허브',
-        to: 'https://choar816.github.io/10000hours-rule/',
+        to: 'https://github.com/choar816/10000hours-rule',
       },
     ],
   },
