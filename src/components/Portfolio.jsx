@@ -5,11 +5,39 @@ import { useSelector } from 'react-redux';
 const projectList = [
   {
     lang: 'EN',
+    title: 'Open market',
+    summary: 'Open market platform where buyers can buy and sellers can register & sell products',
+    description: [
+      'Duration : 2022.04 ~ ing',
+      'Skills : React, JavaScript, React Router',
+      'Role : Developed front-end & integrated with back-end (API integration)',
+    ],
+    link: [
+      { type: 'Website', to: 'https://choar816.github.io/open-market/' },
+      { type: 'GitHub', to: 'https://github.com/choar816/open-market' },
+    ],
+  },
+  {
+    lang: 'KO',
+    title: '오픈마켓',
+    summary: '판매자와 구매자를 구별하여 판매자가 상품을 등록, 판매하며 구매자는 구매하는 오픈마켓 플랫폼',
+    description: [
+      '진행 기간 : 2022.04 ~ ing',
+      '사용 기술 : React, JavaScript, React Router',
+      '역할 : 프론트엔드 개발 & 백엔드 연결 (API 연동)',
+    ],
+    link: [
+      { type: '웹사이트', to: 'https://choar816.github.io/open-market/' },
+      { type: '깃허브', to: 'https://github.com/choar816/open-market' },
+    ],
+  },
+  {
+    lang: 'EN',
     title: 'Intro of choar',
     summary: 'Website where shows my resume and portfolio',
     description: [
       'Duration : 2022.03. (2 weeks)',
-      'Skills : React, Redux',
+      'Skills : React, JavaScript, Redux',
       'Role : Designed & Developed everything',
     ],
     link: [
