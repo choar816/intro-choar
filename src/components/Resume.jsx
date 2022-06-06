@@ -7,14 +7,14 @@ const aboutme = {
   Now I'm trying to progress as an agile and systematic web front-end developer.
   
   I think the importance of a strong basis cannot be stressed enough.
-  - I study based on official documentations.
+  - I study based on official docs.
   - I am aware of how JavaScript works.
   - I am familiar with JavaScript ES6+.
   
   I love contributing to communities.
   - I upload posts on blog about dev knowledge. (e.g. JavaScript concepts, error handlings)
-  - I translate official documentations. (e.g. MDN Web Docs, React Docs, Next.js documentation)
-  - I like participating in networking events to read tech trends and share a diverse view on technology. `,
+  - I translate official docs. (e.g. MDN Web Docs, React Docs, Next.js documentation)
+  - I like participating in networking events to read tech trends and share a diverse view on technology.`,
   KO: `모바일 앱 개발에 흥미를 느껴 개발을 시작했으며,
   현재 민첩하고 체계적인 웹 프론트엔드 개발자로 나아가려 하는 조아라입니다.
 
@@ -26,8 +26,7 @@ const aboutme = {
   커뮤니티에 기여하는 것을 좋아합니다.
   - 블로그에 문제 해결 과정 및 개발 지식을 공유합니다.
   - MDN Web Docs, React Docs, Next.js documentation 등의 공식 문서 번역에 기여합니다.
-  - 컨퍼런스 등 네트워킹 행사에 참여하여 기술 트렌드를 파악하고, 기술에 대해 다양한 시각을 나눕니다.
-  `,
+  - 컨퍼런스 등 네트워킹 행사에 참여하여 기술 트렌드를 파악하고, 기술에 대해 다양한 시각을 나눕니다.`,
 };
 
 const contactList = {
@@ -48,11 +47,11 @@ const contactList = {
 const skillList = {
   EN: {
     'Front-end': 'HTML, CSS, Sass/Scss, JavaScript, React',
-    Algorithm: 'C/C++, Python',
+    Algorithm: 'C/C++ (solved.ac Gold IV)',
   },
   KO: {
     프론트엔드: 'HTML, CSS, Sass/Scss, JavaScript, React',
-    알고리즘: 'C/C++, Python',
+    알고리즘: 'C/C++ (solved.ac Gold IV)',
   },
 };
 
@@ -185,32 +184,6 @@ const eduList = [
   },
   {
     lang: 'EN',
-    duration: '2016.03. - 2021.08.',
-    type: 'Bachelor',
-    school: 'Pohang University of Science and Technology (POSTECH)',
-    link: 'https://postech.ac.kr/eng/',
-    detail: '',
-    description: [
-      "Bachelor's degree in Industrial and Management Engineering",
-      'Overall GPA : 3.4/4.3 (Cum Laude)',
-      'Major GPA : 3.52/4.3',
-    ],
-  },
-  {
-    lang: 'KO',
-    duration: '2016.03. - 2021.08.',
-    type: '학사',
-    school: '포항공과대학교',
-    link: 'https://postech.ac.kr/eng/',
-    detail: '',
-    description: [
-      '산업경영공학과 졸업',
-      '전체 평점 : 3.4/4.3 (우등급)',
-      '전공 평점 : 3.52/4.3',
-    ],
-  },
-  {
-    lang: 'EN',
     duration: '2019.09. - 2020.01.',
     type: 'Exchange student',
     school: 'Graz University of Technology',
@@ -227,6 +200,24 @@ const eduList = [
     detail: ' (오스트리아)',
     description: ['2019-가을학기 교환학생'],
   },
+  {
+    lang: 'EN',
+    duration: '2016.03. - 2021.08.',
+    type: 'Bachelor',
+    school: 'Pohang University of Science and Technology (POSTECH)',
+    link: 'https://postech.ac.kr/eng/',
+    detail: '',
+    description: ["Bachelor's degree in Industrial and Management Engineering"],
+  },
+  {
+    lang: 'KO',
+    duration: '2016.03. - 2021.08.',
+    type: '학사',
+    school: '포항공과대학교',
+    link: 'https://postech.ac.kr/eng/',
+    detail: '',
+    description: ['산업경영공학과 졸업'],
+  },
 ];
 
 const awardList = [
@@ -240,11 +231,11 @@ const awardList = [
     link: [
       {
         type: 'Poster',
-        to: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/09d01d4e-9cd6-473a-99b6-aab834c7895f/PosterContest_%E1%84%8E%E1%85%AC%E1%84%8C%E1%85%A9%E1%86%BC_%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220315%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220315T010731Z&X-Amz-Expires=86400&X-Amz-Signature=10c9029045561f9eaea6d106654102cdde2e6977ccaef98469915ed435c19192&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Poster.pdf%22&x-id=GetObject',
+        to: 'https://drive.google.com/file/d/1KCzH7gUaj4nD6VVPdF0Dbqe00yZ9fq2Z/view?usp=sharing',
       },
       {
         type: 'Certificate',
-        to: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a785058b-5bb0-4033-8b8d-557efac39cb6/APRU_cert_2020_student_poster_CHO.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220315%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220315T010715Z&X-Amz-Expires=86400&X-Amz-Signature=c4d9b1cb8ebe9a11dfd48d4033e48489851fd652c8fe66924c7f6e5531c6bcd4&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Certificate.pdf%22&x-id=GetObject',
+        to: 'https://drive.google.com/file/d/1CuppctZHXdsTwZJPz462Tnb-uNt-RgEq/view?usp=sharing',
       },
       {
         type: 'Article',
@@ -263,11 +254,11 @@ const awardList = [
     link: [
       {
         type: '포스터',
-        to: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/09d01d4e-9cd6-473a-99b6-aab834c7895f/PosterContest_%E1%84%8E%E1%85%AC%E1%84%8C%E1%85%A9%E1%86%BC_%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1%E1%84%87%E1%85%A9%E1%86%AB.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220315%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220315T010731Z&X-Amz-Expires=86400&X-Amz-Signature=10c9029045561f9eaea6d106654102cdde2e6977ccaef98469915ed435c19192&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Poster.pdf%22&x-id=GetObject',
+        to: 'https://drive.google.com/file/d/1KCzH7gUaj4nD6VVPdF0Dbqe00yZ9fq2Z/view?usp=sharing',
       },
       {
         type: '상장',
-        to: 'https://s3.us-west-2.amazonaws.com/secure.notion-static.com/a785058b-5bb0-4033-8b8d-557efac39cb6/APRU_cert_2020_student_poster_CHO.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220315%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220315T010715Z&X-Amz-Expires=86400&X-Amz-Signature=c4d9b1cb8ebe9a11dfd48d4033e48489851fd652c8fe66924c7f6e5531c6bcd4&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Certificate.pdf%22&x-id=GetObject',
+        to: 'https://drive.google.com/file/d/1CuppctZHXdsTwZJPz462Tnb-uNt-RgEq/view?usp=sharing',
       },
       {
         type: '기사',
