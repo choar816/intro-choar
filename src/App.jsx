@@ -16,25 +16,102 @@ const tabContents = [
   },
 ];
 
-const BackgroundLight = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  content: '';
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(169, 255, 229, 1) 0%,
-    rgba(168, 184, 255, 1) 100%
-  );
-  transition: all 0.5s;
-  opacity: ${({ dark }) => (dark ? 0 : 1)};
-`;
+const handleBackgroundColor = (type) => {
+  switch (type) {
+    case 'LIGHT':
+      return `
+        linear-gradient(
+          90deg,
+          rgba(169, 255, 229, 1) 0%,
+          rgba(168, 184, 255, 1) 100%
+        )
+      `;
+    case 'DARK':
+      return `
+        linear-gradient(
+          90deg,
+          rgba(37, 179, 135, 1) 0%,
+          rgba(55, 88, 236, 1) 100%
+        )
+      `;
+    default:
+      return `#E6E6E6`;
+  }
+};
 
-const BackgroundDark = styled.div`
+function App() {
+  const [tabIdx, setTabIdx] = useState(0);
+  const lang = useSelector((state) => state.lang);
+  const color = useSelector((state) => state.color);
+  const dispatch = useDispatch();
+
+  return (
+    <>
+      <Background isVisible={color === 'LIGHT'} type="LIGHT" />
+      <Background isVisible={color === 'DARK'} type="DARK" />
+      <HeaderContainer>
+        <article className="container-lang">
+          <button
+            type="button"
+            onClick={() => {
+              dispatch({ type: 'LANG_TO_EN' });
+            }}
+            className={`${lang === 'EN' ? 'on' : ''}`}
+          >
+            🇺🇸 ENG
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              dispatch({ type: 'LANG_TO_KO' });
+            }}
+            className={`${lang === 'KO' ? 'on' : ''}`}
+          >
+            🇰🇷 KOR
+          </button>
+        </article>
+        <article className="container-dark">
+          <button
+            type="button"
+            onClick={() => {
+              dispatch({ type: 'COLOR_TO_LIGHT' });
+            }}
+            className={`${color === 'LIGHT' ? 'on' : ''}`}
+          >
+            LIGHT
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              dispatch({ type: 'COLOR_TO_DARK' });
+            }}
+            className={`${color === 'DARK' ? 'on' : ''}`}
+          >
+            DARK
+          </button>
+        </article>
+        <h1>{`Hi! I'm Ahra Cho.`}</h1>
+      </HeaderContainer>
+      <TabContainer>
+        {tabContents.map((val, idx) => (
+          <button
+            type="button"
+            onClick={() => setTabIdx(idx)}
+            className={`${idx === tabIdx ? 'on' : ''}`}
+          >
+            {val.name}
+          </button>
+        ))}
+      </TabContainer>
+      <MainContainer color={color}>{tabContents[tabIdx].content}</MainContainer>
+      <footer>Ahra Cho ⓒ 2022 All rights reserved.</footer>
+    </>
+  );
+}
+
+export default App;
+
+const Background = styled.div`
   position: fixed;
   top: 0;
   left: 0;
@@ -43,13 +120,9 @@ const BackgroundDark = styled.div`
   display: block;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(37, 179, 135, 1) 0%,
-    rgba(55, 88, 236, 1) 100%
-  );
   transition: all 0.5s;
-  opacity: ${({ dark }) => (dark ? 1 : 0)};
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+  background: ${({ type }) => handleBackgroundColor(type)};
 `;
 
 const TabContainer = styled.div`
@@ -79,11 +152,12 @@ const TabContainer = styled.div`
 `;
 
 const HeaderContainer = styled.div`
+  position: relative;
   padding-top: 3rem;
   font-size: 1.5rem;
   text-align: center;
 
-  p {
+  h1 {
     margin-top: 2rem;
   }
 
@@ -120,7 +194,9 @@ const MainContainer = styled.div`
   border-radius: 1rem;
   background-color: #fff;
   transition: all 0.5s;
-  ${({ dark }) => dark && `
+  ${({ color }) =>
+    color === 'DARK' &&
+    `
     background-color: #000;
     color: #fff;
     a {
@@ -138,75 +214,3 @@ const MainContainer = styled.div`
     margin: 4rem 6rem;
   }
 `;
-
-function App() {
-  const [tabIdx, setTabIdx] = useState(0);
-  const lang = useSelector((state) => state.lang);
-  const dark = useSelector((state) => state.dark);
-  const dispatch = useDispatch();
-
-  return (
-    <>
-      <BackgroundLight dark={dark} />
-      <BackgroundDark dark={dark} />
-      <HeaderContainer>
-        <article className="container-lang">
-          <button
-            type="button"
-            onClick={() => {
-              dispatch({ type: 'LANG_TO_EN' });
-            }}
-            className={`${lang === 'EN' ? 'on' : ''}`}
-          >
-            🇺🇸 ENG
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              dispatch({ type: 'LANG_TO_KO' });
-            }}
-            className={`${lang === 'KO' ? 'on' : ''}`}
-          >
-            🇰🇷 KOR
-          </button>
-        </article>
-        <article className="container-dark">
-          <button
-            type="button"
-            onClick={() => {
-              dispatch({ type: 'LIGHT' });
-            }}
-            className={`${!dark ? 'on' : ''}`}
-          >
-            LIGHT
-          </button>
-          <button
-            type="button"
-            onClick={() => {
-              dispatch({ type: 'DARK' });
-            }}
-            className={`${dark ? 'on' : ''}`}
-          >
-            DARK
-          </button>
-        </article>
-        <p>Introduction of Ahra Cho</p>
-      </HeaderContainer>
-      <TabContainer>
-        {tabContents.map((val, idx) => (
-          <button
-            type="button"
-            onClick={() => setTabIdx(idx)}
-            className={`${idx === tabIdx ? 'on' : ''}`}
-          >
-            {val.name}
-          </button>
-        ))}
-      </TabContainer>
-      <MainContainer dark={dark}>{tabContents[tabIdx].content}</MainContainer>
-      <footer>Ahra Cho ⓒ 2022 All rights reserved.</footer>
-    </>
-  );
-}
-
-export default App;

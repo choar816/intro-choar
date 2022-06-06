@@ -271,35 +271,6 @@ const projectList = [
   },
 ];
 
-const Container = styled.ul`
-  & > li + li {
-    margin-top: 2.5rem;
-  }
-
-  h2 {
-    font-size: 1.3rem;
-  }
-  p {
-    font-size: 1.1rem;
-    text-decoration: underline;
-  }
-  .list-with-dash {
-    margin-top: 1rem;
-    list-style: '- ' inside;
-  }
-  a {
-    color: #0024c6;
-    transition: all 0.5s;
-    &:hover {
-      color: #738dff;
-      text-decoration: underline;
-    }
-    & + a {
-      margin-left: 0.7rem;
-    }
-  }
-`;
-
 function Portfolio() {
   const lang = useSelector((state) => state.lang);
 
@@ -330,3 +301,32 @@ function Portfolio() {
 }
 
 export default Portfolio;
+
+const Container = styled.ul`
+  & > li + li {
+    margin-top: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+  p {
+    font-size: 1.1rem;
+    text-decoration: underline;
+  }
+  .list-with-dash {
+    margin-top: 1rem;
+    list-style: '- ' inside;
+  }
+  a {
+    color: #0024c6;
+    transition: all 0.5s;
+    &:hover {
+      color: #738dff;
+      text-decoration: underline;
+    }
+    & + a {
+      margin-left: 0.7rem;
+    }
+  }
+`;

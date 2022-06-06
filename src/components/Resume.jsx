@@ -3,11 +3,31 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 
 const aboutme = {
-  EN: `Hi, I'm Ahra Cho.
-      I started learning software development with interest in mobile application development.
-      Now I'm trying to progress as an agile and systematic front-end developer.`,
-  KO: `안녕하세요, 앱 개발에 흥미를 느껴 개발을 시작했으며
-      민첩하고 체계적인 프론트엔드 개발자로 나아가려 하는 조아라입니다.`,
+  EN: `I started learning software development with interest in mobile application development.
+  Now I'm trying to progress as an agile and systematic web front-end developer.
+  
+  I think the importance of a strong basis cannot be stressed enough.
+  - I study based on official documentations.
+  - I am aware of how JavaScript works.
+  - I am familiar with JavaScript ES6+.
+  
+  I love contributing to communities.
+  - I upload posts on blog about dev knowledge. (e.g. JavaScript concepts, error handlings)
+  - I translate official documentations. (e.g. MDN Web Docs, React Docs, Next.js documentation)
+  - I like participating in networking events to read tech trends and share a diverse view on technology. `,
+  KO: `모바일 앱 개발에 흥미를 느껴 개발을 시작했으며,
+  현재 민첩하고 체계적인 웹 프론트엔드 개발자로 나아가려 하는 조아라입니다.
+
+  탄탄한 기초를 가장 중요하게 생각합니다.
+  - 공식 문서를 바탕으로 공부합니다.
+  - JavaScript 동작 원리에 대해 이해하고 있습니다.
+  - JavaScript ES6+에 익숙합니다.
+  
+  커뮤니티에 기여하는 것을 좋아합니다.
+  - 블로그에 문제 해결 과정 및 개발 지식을 공유합니다.
+  - MDN Web Docs, React Docs, Next.js documentation 등의 공식 문서 번역에 기여합니다.
+  - 컨퍼런스 등 네트워킹 행사에 참여하여 기술 트렌드를 파악하고, 기술에 대해 다양한 시각을 나눕니다.
+  `,
 };
 
 const contactList = {
@@ -400,7 +420,7 @@ const Section = styled.section`
     display: inline;
   }
   .list-with-dash {
-    list-style: '- ' inside;
+    list-style: '· ' inside;
   }
 
   .list-contact {

@@ -13,16 +13,16 @@ function reducer(currentState, action) {
     case 'LANG_TO_EN':
       newState.lang = 'EN';
       break;
-    case 'DARK':
-      newState.dark = true;
+    case 'COLOR_TO_DARK':
+      newState.color = 'DARK';
       break;
-    case 'LIGHT':
-      newState.dark = false;
+    case 'COLOR_TO_LIGHT':
+      newState.color = 'LIGHT';
       break;
     default:
       return {
         lang: 'EN',
-        dark: false,
+        color: 'LIGHT',
       };
   }
   return newState;
