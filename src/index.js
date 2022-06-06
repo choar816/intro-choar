@@ -21,7 +21,7 @@ function reducer(currentState, action) {
       break;
     default:
       return {
-        lang: 'EN',
+        lang: 'KO',
         color: 'LIGHT',
       };
   }

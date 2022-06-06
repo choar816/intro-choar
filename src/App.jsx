@@ -54,20 +54,20 @@ function App() {
           <button
             type="button"
             onClick={() => {
-              dispatch({ type: 'LANG_TO_EN' });
-            }}
-            className={`${lang === 'EN' ? 'on' : ''}`}
-          >
-            🇺🇸 ENG
-          </button>
-          <button
-            type="button"
-            onClick={() => {
               dispatch({ type: 'LANG_TO_KO' });
             }}
             className={`${lang === 'KO' ? 'on' : ''}`}
           >
             🇰🇷 KOR
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              dispatch({ type: 'LANG_TO_EN' });
+            }}
+            className={`${lang === 'EN' ? 'on' : ''}`}
+          >
+            🇺🇸 ENG
           </button>
         </article>
         <article className="container-dark">
