@@ -287,11 +287,7 @@ function Resume() {
         <ul className="list-contact">
           {Object.entries(contactList[lang]).map(([key, val]) => (
             <li key={key}>
-              <a
-                target="_blank"
-                rel="noreferrer noopener"
-                href={val}
-              >
+              <a target="_blank" rel="noreferrer noopener" href={val}>
                 {key}
               </a>
             </li>
@@ -302,9 +298,7 @@ function Resume() {
         <h2>📌 SKILL SET</h2>
         <ul className="list-with-dash">
           {Object.entries(skillList[lang]).map((val) => (
-            <li>
-              {`${val[0]} : ${val[1]}`}
-            </li>
+            <li>{`${val[0]} : ${val[1]}`}</li>
           ))}
         </ul>
       </Section>
@@ -409,10 +403,6 @@ const Section = styled.section`
       text-decoration: underline;
     }
   }
-  h2 {
-    margin-bottom: 1.3rem;
-    font-size: 1.5rem;
-  }
   p {
     white-space: pre-line;
   }
@@ -436,17 +426,24 @@ const Section = styled.section`
 
   .list-work {
     & > li {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
       gap: 1rem;
       & + li {
         margin-top: 1rem;
       }
     }
-    .part-first {
-      flex: 1;
-    }
-    .part-second {
-      flex: 2;
+
+    @media screen and (max-width: 768px) {
+      & > li {
+        grid-template-columns: 1fr;
+        & + li::before {
+          content: '';
+          width: 100%;
+          height: 1px;
+          background-color: #e6e6e6;
+        }
+      }
     }
   }
 

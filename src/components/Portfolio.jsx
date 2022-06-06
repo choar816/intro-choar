@@ -34,7 +34,7 @@ const projectList = [
   {
     lang: 'EN',
     title: 'Intro of choar',
-    summary: 'Website where shows my resume and portfolio',
+    summary: 'Website that shows my resume and portfolio',
     description: [
       'Duration : 2022.03. (2 weeks)',
       'Skills : React, JavaScript, Redux',
@@ -305,18 +305,24 @@ export default Portfolio;
 const Container = styled.ul`
   & > li + li {
     margin-top: 2.5rem;
+    position: relative;
+    &::before {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: #e6e6e6;
+      position: absolute;
+      top: -1.2rem;
+    }
   }
 
-  h2 {
-    font-size: 1.3rem;
-  }
   p {
     font-size: 1.1rem;
     text-decoration: underline;
   }
   .list-with-dash {
     margin-top: 1rem;
-    list-style: '- ' inside;
+    list-style: '· ' inside;
   }
   a {
     color: #0024c6;

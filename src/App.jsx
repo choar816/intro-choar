@@ -151,7 +151,7 @@ const TabContainer = styled.div`
   }
 `;
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.header`
   position: relative;
   padding-top: 3rem;
   font-size: 1.5rem;
@@ -187,17 +187,15 @@ const HeaderContainer = styled.div`
   }
 `;
 
-const MainContainer = styled.div`
-  padding: 2rem;
-  margin: 2rem;
+const MainContainer = styled.main`
   box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
   border-radius: 1rem;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 1);
   transition: all 0.5s;
   ${({ color }) =>
     color === 'DARK' &&
     `
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.3);
     color: #fff;
     a {
       color: #738dff;
@@ -207,10 +205,21 @@ const MainContainer = styled.div`
     }
   `}
 
-  @media screen and (min-width: 750px) {
-    margin: 4rem;
+  @media screen and (max-width: 576px) {
+    margin: 2rem 1rem;
+    padding: 1rem;
   }
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 576px) and (max-width: 768px) {
+    margin: 2rem;
+    padding: 2rem;
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    margin: 4rem;
+    padding: 2rem;
+  }
+  @media screen and (min-width: 992px) {
     margin: 4rem 6rem;
+    padding: 3rem;
+    font-size: 1.2rem;
   }
 `;

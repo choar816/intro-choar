@@ -45,28 +45,6 @@ a {
   text-decoration: none;
 }
 
-/* style */
-/* header {
-  padding-top: 3rem;
-  font-size: 1.5rem;
-  text-align: center;
-} */
-
-/* header p {
-  margin-top: 1rem;
-} */
-
-footer {
-  padding-bottom: 2rem;
-  text-align: center;
-}
-
-@media screen and (min-width: 750px) {
-  footer {
-    padding-bottom: 4rem;
-  }
-}
-
 /* font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Source+Code+Pro:wght@500&display=swap');
 
@@ -90,4 +68,27 @@ h1::after {
   animation: blink 1s step-end infinite;
   position: absolute;
   bottom: 3px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.3rem;
+}
+
+footer {
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
+/* responsive */
+@media screen and (max-width: 576px) {
+  h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    padding-bottom: 2rem;
+  }
 }
