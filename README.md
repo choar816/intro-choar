@@ -6,6 +6,8 @@
 `React`, `JavaScript`, `Redux`
 
 ## To do
+- [x] 기획 및 디자인
+- [x] CRA 없이 React 개발 환경 구축
 - [x] 반응형 레이아웃 구현
   - [x] Main container의 전체적 레이아웃
   - [x] Resume - work experience, education
@@ -13,7 +15,6 @@
   - [ ] 지역에 따른 기본 표시 언어 설정
 - [x] 라이트모드/다크모드 토글 기능 구현 (Redux)
 - [ ] 렌더링 최적화
-- [x] 기획 및 디자인
 
 ## Available Scripts
 프로젝트 폴더 내에서 실행 가능한 명령어입니다.
