@@ -16,6 +16,7 @@
 - [x] 라이트모드/다크모드 토글 기능 구현 (Redux)
 - [ ] 리렌더링 최적화
 - [ ] Open Graph Meta Tags 추가
+
 ![meta_tags](./img/metatags.png)
 
 ## Available Scripts
