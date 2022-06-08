@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
+import ToggleList from './ToggleList';
 
 const projectList = [
   {
     lang: 'EN',
     title: 'Open market',
-    summary: 'Open market platform where buyers can buy and sellers can register & sell products',
+    summary:
+      'Open market platform where buyers can buy and sellers can register & sell products',
     description: [
       'Duration : 2022.04 ~ ing',
       'Skills : React, JavaScript, React Router',
@@ -20,11 +22,20 @@ const projectList = [
   {
     lang: 'KO',
     title: '오픈마켓',
-    summary: '판매자와 구매자를 구별하여 판매자가 상품을 등록, 판매하며 구매자는 구매하는 오픈마켓 플랫폼',
+    summary:
+      '판매자와 구매자를 구별하여 판매자가 상품을 등록, 판매하며 구매자는 구매하는 오픈마켓 플랫폼',
     description: [
       '진행 기간 : 2022.04 ~ ing',
       '사용 기술 : React, JavaScript, React Router',
       '역할 : 프론트엔드 개발 & 백엔드 연결 (API 연동)',
+    ],
+    detail: [
+      '반응형 레이아웃을 구현하였습니다. (메인 페이지, Header, Footer)',
+      'Image Carousel을 라이브러리를 사용하지 않고 직접 구현하였습니다.',
+      'fetch 및 localStorage를 사용하여 로그인/로그아웃 기능을 구현했습니다.',
+      'fetch를 사용해 회원가입, 상품 목록 조회, 상품 상세 조회, 장바구니 기능을 구현했습니다.',
+      '로딩 중일 때의 UI를 구현했습니다. (상품 목록 페이지, 상품 상세 페이지, 장바구니 페이지 등)',
+      '예외 처리를 수행했습니다. (상품이 0개일 경우, 없는 상품 페이지에 접근할 경우, 판매자인데 장바구니에 접근할 경우 등)',
     ],
     link: [
       { type: '웹사이트', to: 'https://choar816.github.io/open-market/' },
@@ -171,8 +182,7 @@ const projectList = [
   {
     lang: 'KO',
     title: '로또 번호 생성기',
-    summary:
-      '로또 번호를 랜덤하게 생성 및 기록해주는 모바일 어플리케이션',
+    summary: '로또 번호를 랜덤하게 생성 및 기록해주는 모바일 어플리케이션',
     description: [
       '진행 기간 : 2021.08. (1주)',
       '사용 기술 : React Native, JavaScript, Expo',
@@ -188,8 +198,7 @@ const projectList = [
   {
     lang: 'EN',
     title: '10000 Hours',
-    summary:
-      'Cloned website of weniv 10000 hours website',
+    summary: 'Cloned website of weniv 10000 hours website',
     description: [
       'Duration : 2021.11. ~ 2021.12. (3 days)',
       'Skills : HTML, CSS, JavaScript',
@@ -209,8 +218,7 @@ const projectList = [
   {
     lang: 'KO',
     title: '1만 시간의 법칙',
-    summary:
-      '위니브 1만 시간의 법칙의 클론 웹사이트',
+    summary: '위니브 1만 시간의 법칙의 클론 웹사이트',
     description: [
       '진행 기간 : 2021.11. ~ 2021.12. (3일)',
       '사용 기술 : HTML, CSS, JavaScript',
@@ -279,13 +287,10 @@ function Portfolio() {
       {projectList
         .filter((proj) => lang === proj.lang)
         .map((proj) => (
-          <li>
+          <article>
             <h2>{proj.title}</h2>
             <p>{proj.summary}</p>
             <ul className="list-with-dash">
-              {proj.description.map((val) => (
-                <li>{val}</li>
-              ))}
               <li>
                 {proj.link.map((val) => (
                   <a target="_blank" rel="noreferrer noopener" href={val.to}>
@@ -293,8 +298,12 @@ function Portfolio() {
                   </a>
                 ))}
               </li>
+              {proj.description.map((val) => (
+                <li>{val}</li>
+              ))}
             </ul>
-          </li>
+            <ToggleList list={proj.detail} />
+          </article>
         ))}
     </Container>
   );
@@ -302,8 +311,8 @@ function Portfolio() {
 
 export default Portfolio;
 
-const Container = styled.ul`
-  & > li + li {
+const Container = styled.section`
+  & > article + article {
     margin-top: 2.5rem;
     position: relative;
     &::before {
@@ -316,7 +325,7 @@ const Container = styled.ul`
     }
   }
 
-  p {
+  & > p {
     font-size: 1.1rem;
     text-decoration: underline;
   }

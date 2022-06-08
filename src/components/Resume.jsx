@@ -30,18 +30,10 @@ const aboutme = {
 };
 
 const contactList = {
-  EN: {
-    GitHub: 'https://github.com/choar816',
-    LinkedIn: 'https://www.linkedin.com/in/ahra-cho-209b6b187/',
-    Mail: 'mailto:ahracho816@gmail.com',
-    Blog: 'https://choar816.tistory.com/',
-  },
-  KO: {
-    깃허브: 'https://github.com/choar816',
-    링크드인: 'https://www.linkedin.com/in/ahra-cho-209b6b187/',
-    이메일: 'mailto:ahracho816@gmail.com',
-    블로그: 'https://choar816.tistory.com/',
-  },
+  GitHub: 'https://github.com/choar816',
+  LinkedIn: 'https://www.linkedin.com/in/ahra-cho-209b6b187/',
+  Mail: 'mailto:ahracho816@gmail.com',
+  Blog: 'https://choar816.tistory.com/',
 };
 
 const skillList = {
@@ -274,9 +266,8 @@ function Resume() {
     <>
       <Section>
         <h2>📌 ABOUT ME</h2>
-        <p>{aboutme[lang]}</p>
         <ul className="list-contact">
-          {Object.entries(contactList[lang]).map(([key, val]) => (
+          {Object.entries(contactList).map(([key, val]) => (
             <li key={key}>
               <a target="_blank" rel="noreferrer noopener" href={val}>
                 {key}
@@ -284,6 +275,7 @@ function Resume() {
             </li>
           ))}
         </ul>
+        <p>{aboutme[lang]}</p>
       </Section>
       <Section>
         <h2>📌 SKILL SET</h2>
@@ -405,7 +397,7 @@ const Section = styled.section`
   }
 
   .list-contact {
-    margin-top: 1rem;
+    margin-bottom: 1rem;
     text-align: center;
     li {
       display: inline-block;
