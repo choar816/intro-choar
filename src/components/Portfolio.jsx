@@ -11,7 +11,7 @@ const projectList = [
       'Open market platform where buyers can buy and sellers can register & sell products',
     description: [
       'Duration : 2022.04 ~ ing',
-      'Skills : React, JavaScript, React Router',
+      'Skills : React, React Router, JavaScript, Styled Components',
       'Role : Developed front-end & integrated with back-end (API integration)',
     ],
     link: [
@@ -26,10 +26,12 @@ const projectList = [
       '판매자와 구매자를 구별하여 판매자가 상품을 등록, 판매하며 구매자는 구매하는 오픈마켓 플랫폼',
     description: [
       '진행 기간 : 2022.04 ~ ing',
-      '사용 기술 : React, JavaScript, React Router',
+      '사용 기술 : React, React Router, JavaScript, Styled Components',
       '역할 : 프론트엔드 개발 & 백엔드 연결 (API 연동)',
     ],
     detail: [
+      'create-react-app을 사용하지 않고 babel, webpack 등을 직접 설정하여 React 개발환경을 구축했습니다.',
+      'GitHub Pages 배포를 자동화하였습니다.',
       '반응형 레이아웃을 구현하였습니다. (메인 페이지, Header, Footer)',
       'Image Carousel을 라이브러리를 사용하지 않고 직접 구현하였습니다.',
       'fetch 및 localStorage를 사용하여 로그인/로그아웃 기능을 구현했습니다.',
@@ -44,11 +46,51 @@ const projectList = [
   },
   {
     lang: 'EN',
+    title: 'Meow Meow Fuzzyface',
+    summary: 'Simple game inspired by Vampire Survivors',
+    description: [
+      'Duration : 2022.05 (1 week)',
+      'Skills : JavaScript, Phaser 3',
+      'Role : Developed overall game',
+    ],
+    detail: ['작성중입니다.'],
+    link: [
+      {
+        type: '웹사이트',
+        to: 'https://choar816.github.io/meow-meow-fuzzyface/',
+      },
+      { type: '깃허브', to: 'https://github.com/choar816/meow-meow-fuzzyface' },
+    ],
+  },
+  {
+    lang: 'KO',
+    title: '먀우 먀우 퍼지페이스',
+    summary:
+      '뱀파이어 서바이벌(Vampire Survivors)로부터 영감을 받아 만든 간단한 게임',
+    description: [
+      '진행 기간 : 2022.05 (1주)',
+      '사용 기술 : JavaScript, Phaser 3',
+      '역할 : 게임 개발 전반',
+    ],
+    detail: [
+      'Player, Enemy 등 class 단위로 코드 작성',
+      '재사용성 및 확장성을 고려한 객체지향적 설계',
+    ],
+    link: [
+      {
+        type: 'Website',
+        to: 'https://choar816.github.io/meow-meow-fuzzyface/',
+      },
+      { type: 'GitHub', to: 'https://github.com/choar816/meow-meow-fuzzyface' },
+    ],
+  },
+  {
+    lang: 'EN',
     title: 'Intro of choar',
     summary: 'Website that shows my resume and portfolio',
     description: [
       'Duration : 2022.03. (2 weeks)',
-      'Skills : React, JavaScript, Redux',
+      'Skills : React, React Redux, JavaScript, Styled Components',
       'Role : Designed & Developed everything',
     ],
     link: [
@@ -62,8 +104,16 @@ const projectList = [
     summary: '이력서와 포트폴리오를 정리한 웹사이트',
     description: [
       '진행 기간 : 2022.03. (2주)',
-      '사용 기술 : React, Redux',
+      '사용 기술 : React, React Redux, JavaScript, Styled Components',
       '역할 : 디자인, 개발 전체',
+    ],
+    detail: [
+      '기획 및 디자인을 하였습니다.',
+      'create-react-app을 사용하지 않고 babel, webpack 등을 직접 설정하여 React 개발환경을 구축했습니다.',
+      '반응형 레이아웃을 구현하였습니다.',
+      'react-redux로 i18n을 적용하였습니다.',
+      'react-redux로 라이트 모드/다크 모드 토글 기능을 구현했습니다.',
+      '배경 그라데이션의 transition을 구현했습니다.',
     ],
     link: [
       { type: '웹사이트', to: 'https://choar816.github.io/intro-choar/' },

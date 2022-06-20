@@ -39,11 +39,11 @@ const contactList = {
 const skillList = {
   EN: {
     'Front-end': 'HTML, CSS, Sass/Scss, JavaScript, React',
-    Algorithm: 'C/C++ (solved.ac Gold IV)',
+    Algorithm: 'C/C++, JavaScript',
   },
   KO: {
     프론트엔드: 'HTML, CSS, Sass/Scss, JavaScript, React',
-    알고리즘: 'C/C++ (solved.ac Gold IV)',
+    알고리즘: 'C/C++, JavaScript',
   },
 };
 
