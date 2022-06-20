@@ -1,7 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import ToggleList from './ToggleList';
+import market1 from '../../public/assets/market-1.png';
+import market2 from '../../public/assets/market-2.png';
+import market3 from '../../public/assets/market-3.png';
+import market4 from '../../public/assets/market-4.png';
+import market5 from '../../public/assets/market-5.png';
+import meow1 from '../../public/assets/meow-1.png';
+import meow2 from '../../public/assets/meow-2.png';
+import meow3 from '../../public/assets/meow-3.png';
+import meow4 from '../../public/assets/meow-4.png';
+import meow5 from '../../public/assets/meow-5.png';
+import intro1 from '../../public/assets/intro-1.png';
+import intro2 from '../../public/assets/intro-2.png';
+import intro3 from '../../public/assets/intro-3.png';
+import intro4 from '../../public/assets/intro-4.png';
+import intro5 from '../../public/assets/intro-5.png';
+import js1 from '../../public/assets/js-1.png';
+import js2 from '../../public/assets/js-2.png';
+import js3 from '../../public/assets/js-3.png';
+import js4 from '../../public/assets/js-4.png';
+import js5 from '../../public/assets/js-5.png';
+import js6 from '../../public/assets/js-6.png';
+import landing1 from '../../public/assets/landing-1.png';
+import landing2 from '../../public/assets/landing-2.png';
+import landing3 from '../../public/assets/landing-3.png';
+import landing4 from '../../public/assets/landing-4.png';
+import hour1 from '../../public/assets/hour-1.png';
+import hour2 from '../../public/assets/hour-2.png';
+import hour3 from '../../public/assets/hour-3.png';
+import hour4 from '../../public/assets/hour-4.png';
+import hour5 from '../../public/assets/hour-5.png';
+import cool1 from '../../public/assets/cool-1.png';
+import cool2 from '../../public/assets/cool-2.png';
+import cool3 from '../../public/assets/cool-3.png';
+import cool4 from '../../public/assets/cool-4.png';
+import block1 from '../../public/assets/block-1.webp';
+import block2 from '../../public/assets/block-2.webp';
+import block3 from '../../public/assets/block-3.webp';
+import lotto1 from '../../public/assets/lotto-1.webp';
+import lotto2 from '../../public/assets/lotto-2.webp';
+import lotto3 from '../../public/assets/lotto-3.webp';
+import Modal from './Modal';
 
 const projectList = [
   {
@@ -17,7 +58,12 @@ const projectList = [
     link: [
       { type: 'Website', to: 'https://choar816.github.io/open-market/' },
       { type: 'GitHub', to: 'https://github.com/choar816/open-market' },
+      {
+        type: 'Demo Video',
+        to: 'https://drive.google.com/file/d/1zP27kC8ETIAf3sMW13BAxMlnJJgqtO2T/view?usp=sharing',
+      },
     ],
+    photo: [market1, market2, market3, market4, market5],
   },
   {
     lang: 'KO',
@@ -42,7 +88,12 @@ const projectList = [
     link: [
       { type: '웹사이트', to: 'https://choar816.github.io/open-market/' },
       { type: '깃허브', to: 'https://github.com/choar816/open-market' },
+      {
+        type: '데모 비디오',
+        to: 'https://drive.google.com/file/d/1zP27kC8ETIAf3sMW13BAxMlnJJgqtO2T/view?usp=sharing',
+      },
     ],
+    photo: [market1, market2, market3, market4, market5],
   },
   {
     lang: 'EN',
@@ -56,11 +107,12 @@ const projectList = [
     detail: ['작성중입니다.'],
     link: [
       {
-        type: '웹사이트',
+        type: 'Website',
         to: 'https://choar816.github.io/meow-meow-fuzzyface/',
       },
-      { type: '깃허브', to: 'https://github.com/choar816/meow-meow-fuzzyface' },
+      { type: 'GitHub', to: 'https://github.com/choar816/meow-meow-fuzzyface' },
     ],
+    photo: [meow1, meow2, meow3, meow4, meow5],
   },
   {
     lang: 'KO',
@@ -75,18 +127,20 @@ const projectList = [
     detail: [
       'Player, Enemy 등 class 단위로 코드 작성',
       '재사용성 및 확장성을 고려한 객체지향적 설계',
+      '현재 인프런 강의 제작 중',
     ],
     link: [
       {
-        type: 'Website',
+        type: '웹사이트',
         to: 'https://choar816.github.io/meow-meow-fuzzyface/',
       },
-      { type: 'GitHub', to: 'https://github.com/choar816/meow-meow-fuzzyface' },
+      { type: '깃허브', to: 'https://github.com/choar816/meow-meow-fuzzyface' },
     ],
+    photo: [meow1, meow2, meow3, meow4, meow5],
   },
   {
     lang: 'EN',
-    title: 'Intro of choar',
+    title: 'Intro',
     summary: 'Website that shows my resume and portfolio',
     description: [
       'Duration : 2022.03. (2 weeks)',
@@ -97,10 +151,11 @@ const projectList = [
       { type: 'Website', to: 'https://choar816.github.io/intro-choar/' },
       { type: 'GitHub', to: 'https://github.com/choar816/intro-choar' },
     ],
+    photo: [intro1, intro2, intro3, intro4, intro5],
   },
   {
     lang: 'KO',
-    title: '나의 인트로',
+    title: '인트로',
     summary: '이력서와 포트폴리오를 정리한 웹사이트',
     description: [
       '진행 기간 : 2022.03. (2주)',
@@ -119,6 +174,7 @@ const projectList = [
       { type: '웹사이트', to: 'https://choar816.github.io/intro-choar/' },
       { type: '깃허브', to: 'https://github.com/choar816/intro-choar' },
     ],
+    photo: [intro1, intro2, intro3, intro4, intro5],
   },
   {
     lang: 'EN',
@@ -133,6 +189,7 @@ const projectList = [
       { type: 'Website', to: 'https://jsquizzz.netlify.app/' },
       { type: 'GitHub', to: 'https://github.com/useon/js-quiz' },
     ],
+    photo: [js1, js2, js3, js4, js5, js6],
   },
   {
     lang: 'KO',
@@ -147,43 +204,9 @@ const projectList = [
       { type: '웹사이트', to: 'https://jsquizzz.netlify.app/' },
       { type: '깃허브', to: 'https://github.com/useon/js-quiz' },
     ],
+    photo: [js1, js2, js3, js4, js5, js6],
   },
-  {
-    lang: 'EN',
-    title: 'Blockchain UX Checklist',
-    summary:
-      "Android application of 'UX guideline application for developers and operators of blockchain services' designed by EDEN Lab., POSTECH",
-    description: [
-      'Duration : 2021.06. ~ 2021.09.',
-      'Skills : Android(Java)',
-      'Role : Developed everything',
-    ],
-    link: [
-      {
-        type: 'Google Play Store',
-        to: 'https://play.google.com/store/apps/details?id=com.eden.blue',
-      },
-      { type: 'GitHub', to: 'https://github.com/choar816/blockchain-ux-app' },
-    ],
-  },
-  {
-    lang: 'KO',
-    title: '블록체인 UX 체크리스트',
-    summary:
-      "포항공과대학교 EDEN Lab.에서 기획한 '블록체인 서비스의 개발자 및 운영자를 위한 UX 가이드라인 애플리케이션'의 안드로이드 어플리케이션",
-    description: [
-      '진행 기간 : 2021.06. ~ 2021.09.',
-      '사용 기술 : Android(Java)',
-      '역할 : 개발 전체',
-    ],
-    link: [
-      {
-        type: '플레이스토어',
-        to: 'https://play.google.com/store/apps/details?id=com.eden.blue',
-      },
-      { type: '깃허브', to: 'https://github.com/choar816/blockchain-ux-app' },
-    ],
-  },
+
   {
     lang: 'EN',
     title: 'Landing Page',
@@ -197,6 +220,7 @@ const projectList = [
       { type: 'Website', to: 'https://choar816.github.io/landing-page/' },
       { type: 'GitHub', to: 'https://github.com/choar816/landing-page' },
     ],
+    photo: [landing1, landing2, landing3, landing4],
   },
   {
     lang: 'KO',
@@ -211,40 +235,9 @@ const projectList = [
       { type: '웹사이트', to: 'https://choar816.github.io/landing-page/' },
       { type: '깃허브', to: 'https://github.com/choar816/landing-page' },
     ],
+    photo: [landing1, landing2, landing3, landing4],
   },
-  {
-    lang: 'EN',
-    title: 'Lottery Generator',
-    summary:
-      'Mobile application that randomly generates and records lottery numbers',
-    description: [
-      'Duration : 2021.08. (1 week)',
-      'Skills : React Native, JavaScript, Expo',
-      'Role : Developed front-end & Deploy',
-    ],
-    link: [
-      {
-        type: 'Google Play Store',
-        to: 'https://play.google.com/store/apps/details?id=com.joebrothers.lotterygenerator',
-      },
-    ],
-  },
-  {
-    lang: 'KO',
-    title: '로또 번호 생성기',
-    summary: '로또 번호를 랜덤하게 생성 및 기록해주는 모바일 어플리케이션',
-    description: [
-      '진행 기간 : 2021.08. (1주)',
-      '사용 기술 : React Native, JavaScript, Expo',
-      '역할 : 프론트엔드 개발 & 배포',
-    ],
-    link: [
-      {
-        type: '플레이스토어',
-        to: 'https://play.google.com/store/apps/details?id=com.joebrothers.lotterygenerator',
-      },
-    ],
-  },
+
   {
     lang: 'EN',
     title: '10000 Hours',
@@ -264,6 +257,7 @@ const projectList = [
         to: 'https://github.com/choar816/10000hours-rule',
       },
     ],
+    photo: [hour1, hour2, hour3, hour4, hour5],
   },
   {
     lang: 'KO',
@@ -284,6 +278,7 @@ const projectList = [
         to: 'https://github.com/choar816/10000hours-rule',
       },
     ],
+    photo: [hour1, hour2, hour3, hour4, hour5],
   },
   {
     lang: 'EN',
@@ -305,6 +300,7 @@ const projectList = [
         to: 'https://github.com/choar816/coolzzin-test',
       },
     ],
+    photo: [cool1, cool2, cool3, cool4],
   },
   {
     lang: 'KO',
@@ -326,34 +322,135 @@ const projectList = [
         to: 'https://github.com/choar816/coolzzin-test',
       },
     ],
+    photo: [cool1, cool2, cool3, cool4],
+  },
+
+  {
+    lang: 'EN',
+    title: 'Blockchain UX Checklist',
+    summary:
+      "Android application of 'UX guideline application for developers and operators of blockchain services' designed by EDEN Lab., POSTECH",
+    description: [
+      'Duration : 2021.06. ~ 2021.09.',
+      'Skills : Android(Java)',
+      'Role : Developed everything',
+    ],
+    link: [
+      {
+        type: 'Google Play Store',
+        to: 'https://play.google.com/store/apps/details?id=com.eden.blue',
+      },
+      { type: 'GitHub', to: 'https://github.com/choar816/blockchain-ux-app' },
+    ],
+    photo: [block1, block2, block3],
+  },
+  {
+    lang: 'KO',
+    title: '블록체인 UX 체크리스트',
+    summary:
+      "포항공과대학교 EDEN Lab.에서 기획한 '블록체인 서비스의 개발자 및 운영자를 위한 UX 가이드라인 애플리케이션'의 안드로이드 어플리케이션",
+    description: [
+      '진행 기간 : 2021.06. ~ 2021.09.',
+      '사용 기술 : Android(Java)',
+      '역할 : 개발 전체',
+    ],
+    link: [
+      {
+        type: '플레이스토어',
+        to: 'https://play.google.com/store/apps/details?id=com.eden.blue',
+      },
+      { type: '깃허브', to: 'https://github.com/choar816/blockchain-ux-app' },
+    ],
+    photo: [block1, block2, block3],
+  },
+
+  {
+    lang: 'EN',
+    title: 'Lottery Generator',
+    summary:
+      'Mobile application that randomly generates and records lottery numbers',
+    description: [
+      'Duration : 2021.08. (1 week)',
+      'Skills : React Native, JavaScript, Expo',
+      'Role : Developed front-end & Deploy',
+    ],
+    link: [
+      {
+        type: 'Google Play Store',
+        to: 'https://play.google.com/store/apps/details?id=com.joebrothers.lotterygenerator',
+      },
+    ],
+    photo: [lotto1, lotto2, lotto3],
+  },
+  {
+    lang: 'KO',
+    title: '로또 번호 생성기',
+    summary: '로또 번호를 랜덤하게 생성 및 기록해주는 모바일 어플리케이션',
+    description: [
+      '진행 기간 : 2021.08. (1주)',
+      '사용 기술 : React Native, JavaScript, Expo',
+      '역할 : 프론트엔드 개발 & 배포',
+    ],
+    link: [
+      {
+        type: '플레이스토어',
+        to: 'https://play.google.com/store/apps/details?id=com.joebrothers.lotterygenerator',
+      },
+    ],
+    photo: [lotto1, lotto2, lotto3],
   },
 ];
 
 function Portfolio() {
   const lang = useSelector((state) => state.lang);
+  const [modalOn, setModalOn] = useState(false);
+  const [imgSrc, setImgSrc] = useState(market1);
+  const [title, setTitle] = useState('');
 
   return (
     <Container>
+      <Modal
+        modalOn={modalOn}
+        setModalOn={setModalOn}
+        imgSrc={imgSrc}
+        title={title}
+      />
       {projectList
         .filter((proj) => lang === proj.lang)
         .map((proj) => (
-          <article>
-            <h2>{proj.title}</h2>
-            <p>{proj.summary}</p>
-            <ul className="list-with-dash">
-              <li>
-                {proj.link.map((val) => (
-                  <a target="_blank" rel="noreferrer noopener" href={val.to}>
-                    {val.type}
-                  </a>
-                ))}
-              </li>
-              {proj.description.map((val) => (
-                <li>{val}</li>
+          <Project>
+            <PhotoContainer>
+              {proj.photo.map((val, idx) => (
+                <img
+                  key={idx}
+                  src={val}
+                  alt="포트폴리오 이미지"
+                  onClick={() => {
+                    setImgSrc(val);
+                    setModalOn(true);
+                    setTitle(proj.title);
+                  }}
+                />
               ))}
-            </ul>
-            <ToggleList list={proj.detail} />
-          </article>
+            </PhotoContainer>
+            <ExpContainer>
+              <h2>{proj.title}</h2>
+              <p>{proj.summary}</p>
+              <ul className="list-with-dash">
+                <li>
+                  {proj.link.map((val) => (
+                    <a target="_blank" rel="noreferrer noopener" href={val.to}>
+                      {val.type}
+                    </a>
+                  ))}
+                </li>
+                {proj.description.map((val) => (
+                  <li>{val}</li>
+                ))}
+              </ul>
+              <ToggleList list={proj.detail} />
+            </ExpContainer>
+          </Project>
         ))}
     </Container>
   );
@@ -362,18 +459,8 @@ function Portfolio() {
 export default Portfolio;
 
 const Container = styled.section`
-  & > article + article {
-    margin-top: 2.5rem;
-    position: relative;
-    &::before {
-      content: '';
-      width: 100%;
-      height: 1px;
-      background-color: #e6e6e6;
-      position: absolute;
-      top: -1.2rem;
-    }
-  }
+  display: flex;
+  flex-direction: column;
 
   & > p {
     font-size: 1.1rem;
@@ -394,4 +481,41 @@ const Container = styled.section`
       margin-left: 0.7rem;
     }
   }
+`;
+
+const Project = styled.article`
+  display: flex;
+  flex-direction: column;
+
+  & + article {
+    margin-top: 2.5rem;
+    position: relative;
+    &::before {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: #e6e6e6;
+      position: absolute;
+      top: -1.2rem;
+    }
+  }
+`;
+
+const PhotoContainer = styled.article`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  height: 200px;
+  width: 100%;
+  overflow-x: scroll;
+
+  img {
+    height: 180px;
+    cursor: pointer;
+  }
+`;
+
+const ExpContainer = styled.article`
+  margin-top: 10px;
 `;
