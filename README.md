@@ -14,8 +14,9 @@
 - [x] i18n 토글 기능 구현 (Redux)
   - [ ] 지역에 따른 기본 표시 언어 설정
 - [x] 라이트모드/다크모드 토글 기능 구현 (Redux)
+- [x] 포트폴리오 사진 클릭시 모달창 구현
 - [ ] 리렌더링 최적화
-- [ ] Open Graph Meta Tags 추가
+- [x] Open Graph Meta Tags 추가
 
 ![meta_tags](./img/metatags.png)
 
