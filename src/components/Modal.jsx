@@ -7,7 +7,7 @@ function Modal({ modalOn, setModalOn, imgSrc, title }) {
       <>
         <Background onClick={() => setModalOn(false)} />
         <Container onClick={() => setModalOn(false)}>
-          <p>✨ {title} ✨</p>
+          <h2>✨ {title} ✨</h2>
           <Img src={imgSrc} />
         </Container>
       </>
@@ -38,19 +38,24 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 10px;
   padding: 30px;
-  height: 80vh;
+  max-width: 80vw;
+  max-height: 80vh;
   background-color: #fff;
   border-radius: 1rem;
   box-shadow: 0 0 10px 5px rgb(0 0 0 / 5%);
 
-  p {
+  h2 {
     color: #000;
     font-weight: bold;
     text-align: center;
   }
+  img {
+    object-fit: contain;
+  }
 `;
 
 const Img = styled.img`
-  height: 75vh;
+  max-height: 75vh;
 `;
