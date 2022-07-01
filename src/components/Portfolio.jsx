@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import ToggleList from './ToggleList';
 import Modal from './Modal';
-import { projectList } from '../data/PortfolioData';
+import projectList from '../data/PortfolioData';
 
 function Portfolio() {
   const lang = useSelector((state) => state.lang);
@@ -24,13 +24,18 @@ function Portfolio() {
         .map((proj) => (
           <Project>
             <PhotoContainer>
-              {proj.photo.map((val, idx) => (
+              {proj.photos.map((photo, idx) => (
                 <img
                   key={idx}
-                  src={val}
+                  src={photo}
                   alt="포트폴리오 이미지"
                   onClick={() => {
-                    setImgSrc(val);
+                    setImgSrc(photo);
+                    setModalOn(true);
+                    setTitle(proj.title);
+                  }}
+                  onKeyDown={() => {
+                    setImgSrc(photo);
                     setModalOn(true);
                     setTitle(proj.title);
                   }}
@@ -42,17 +47,17 @@ function Portfolio() {
               <p>{proj.summary}</p>
               <ul className="list-with-dash">
                 <li>
-                  {proj.link.map((val) => (
-                    <a target="_blank" rel="noreferrer noopener" href={val.to}>
-                      {val.type}
+                  {proj.links.map((link) => (
+                    <a target="_blank" rel="noreferrer noopener" href={link.to}>
+                      {link.type}
                     </a>
                   ))}
                 </li>
-                {proj.description.map((val) => (
-                  <li>{val}</li>
+                {proj.descriptions.map((description) => (
+                  <li>{description}</li>
                 ))}
               </ul>
-              <ToggleList list={proj.detail} />
+              <ToggleList list={proj.details} />
             </ExpContainer>
           </Project>
         ))}
@@ -109,7 +114,7 @@ const PhotoContainer = styled.article`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 10px;
+  gap: 13px;
   height: 200px;
   width: 100%;
   overflow-x: scroll;
@@ -117,6 +122,8 @@ const PhotoContainer = styled.article`
   img {
     height: 180px;
     cursor: pointer;
+    box-shadow: 3px 3px 7px 3px rgb(0 0 0 / 15%);
+    border-radius: 8px;
   }
 `;
 
