@@ -38,7 +38,7 @@ const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 10px;
+  gap: 30px;
   padding: 30px;
   max-width: 80vw;
   max-height: 80vh;
@@ -50,6 +50,7 @@ const Container = styled.section`
     color: #000;
     font-weight: bold;
     text-align: center;
+    margin-bottom: 0;
   }
   img {
     object-fit: contain;
