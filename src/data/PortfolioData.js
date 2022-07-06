@@ -173,36 +173,6 @@ const projectList = [
     ],
     photos: [intro1, intro2, intro3, intro4, intro5],
   },
-  {
-    lang: 'EN',
-    title: 'JS Quiz (Team Project)',
-    summary: 'Website where people can solve JavaScript quizs and check scores',
-    descriptions: [
-      'Duration : 2021.12. (3 weeks)',
-      'Skills : HTML, CSS, JavaScript, Firebase, Chart.js',
-      'Role : Developed timer related function',
-    ],
-    links: [
-      { type: 'Website', to: 'https://jsquizzz.netlify.app/' },
-      { type: 'GitHub', to: 'https://github.com/useon/js-quiz' },
-    ],
-    photos: [js1, js2, js3, js4, js5, js6],
-  },
-  {
-    lang: 'KO',
-    title: 'JS 퀴즈 (팀 프로젝트)',
-    summary: '자바스크립트 문법 퀴즈를 풀며 실력을 확인할 수 있는 웹사이트',
-    descriptions: [
-      '진행 기간 : 2021.12. (3주)',
-      '사용 기술 : HTML, CSS, JavaScript, Firebase, Chart.js',
-      '역할 : 타이머 관련 기능 개발',
-    ],
-    links: [
-      { type: '웹사이트', to: 'https://jsquizzz.netlify.app/' },
-      { type: '깃허브', to: 'https://github.com/useon/js-quiz' },
-    ],
-    photos: [js1, js2, js3, js4, js5, js6],
-  },
 
   {
     lang: 'EN',
@@ -276,50 +246,6 @@ const projectList = [
       },
     ],
     photos: [hour1, hour2, hour3, hour4, hour5],
-  },
-  {
-    lang: 'EN',
-    title: 'Coolzzin Test',
-    summary:
-      'Coolzzin test website consisting of a main page, a problem page, and a result page',
-    descriptions: [
-      'Duration : 2021.11. ~ 2021.12. (3 days)',
-      'Skills : Bootstrap, JavaScript',
-      'Role : Edit UI(Bootstrap) & Put ad(Kakao Adfit) & Deploy (Netlify)',
-    ],
-    links: [
-      {
-        type: 'Website',
-        to: 'https://test-coolzzin.netlify.app/',
-      },
-      {
-        type: 'GitHub',
-        to: 'https://github.com/choar816/coolzzin-test',
-      },
-    ],
-    photos: [cool1, cool2, cool3, cool4],
-  },
-  {
-    lang: 'KO',
-    title: '쿨찐 테스트',
-    summary:
-      '메인 페이지, 문제 페이지, 결과 페이지로 이루어진 쿨찐 테스트 웹사이트',
-    descriptions: [
-      '진행 기간 : 2021.11. ~ 2021.12. (3일)',
-      '사용 기술 : Bootstrap, JavaScript',
-      '역할 : UI 수정 (Bootstrap) & 광고 부착 (Kakao Adfit) & 배포 (Netlify)',
-    ],
-    links: [
-      {
-        type: '웹사이트',
-        to: 'https://test-coolzzin.netlify.app/',
-      },
-      {
-        type: '깃허브',
-        to: 'https://github.com/choar816/coolzzin-test',
-      },
-    ],
-    photos: [cool1, cool2, cool3, cool4],
   },
 
   {
