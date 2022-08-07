@@ -10,7 +10,7 @@ function ListWithDate({ list }) {
       {list
         .filter((item) => item.lang === lang)
         .map((item) => (
-          <li>
+          <li key={item.title}>
             <article className="part-first">
               <h3>{item.duration}</h3>
               <p>{item.type}</p>
@@ -21,8 +21,8 @@ function ListWithDate({ list }) {
               </a>
               <p className="text-after-link">{item.department}</p>
               <ul className="list-with-dash">
-                {item.description.map((val) => (
-                  <li>{val}</li>
+                {item.description.map((desc) => (
+                  <li key={desc}>{desc}</li>
                 ))}
               </ul>
             </article>

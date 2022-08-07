@@ -93,13 +93,14 @@ function App() {
         <h1>{`Hi! I'm Ahra Cho.`}</h1>
       </HeaderContainer>
       <TabContainer>
-        {tabContents.map((val, idx) => (
+        {tabContents.map((tabContent, idx) => (
           <button
+            key={tabContent.name}
             type="button"
             onClick={() => setTabIdx(idx)}
             className={`${idx === tabIdx ? 'on' : ''}`}
           >
-            {val.name}
+            {tabContent.name}
           </button>
         ))}
       </TabContainer>

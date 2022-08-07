@@ -18,10 +18,10 @@ function Resume() {
       <Section>
         <h2>📌 ABOUT ME</h2>
         <ul className="list-contact">
-          {Object.entries(contactList).map(([key, val]) => (
-            <li key={key}>
-              <a target="_blank" rel="noreferrer noopener" href={val}>
-                {key}
+          {Object.entries(contactList).map(([contactType, contactLink]) => (
+            <li key={contactType}>
+              <a target="_blank" rel="noreferrer noopener" href={contactLink}>
+                {contactType}
               </a>
             </li>
           ))}
@@ -31,8 +31,8 @@ function Resume() {
       <Section>
         <h2>📌 SKILL SET</h2>
         <ul className="list-with-dash">
-          {Object.entries(skillList[lang]).map((val) => (
-            <li>{`${val[0]} : ${val[1]}`}</li>
+          {Object.entries(skillList[lang]).map(([skillType, skillSet]) => (
+            <li key={skillType}>{`${skillType} : ${skillSet}`}</li>
           ))}
         </ul>
       </Section>
@@ -50,20 +50,21 @@ function Resume() {
           {awardList
             .filter((award) => award.lang === lang)
             .map((award) => (
-              <li>
+              <li key={award.title}>
                 <h3>{award.title}</h3>
                 <ul className="list-with-dash">
-                  {award.description.map((val) => (
-                    <li>{val}</li>
+                  {award.description.map((description) => (
+                    <li key={description}>{description}</li>
                   ))}
                   <li>
-                    {award.link.map((val) => (
+                    {award.link.map((linkData) => (
                       <a
+                        key={linkData.type}
                         target="_blank"
                         rel="noreferrer noopener"
-                        href={val.to}
+                        href={linkData.to}
                       >
-                        {val.type}
+                        {linkData.type}
                       </a>
                     ))}
                   </li>

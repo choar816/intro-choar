@@ -22,11 +22,11 @@ function Portfolio() {
       {projectList
         .filter((proj) => lang === proj.lang)
         .map((proj) => (
-          <Project>
+          <Project key={`${proj.title}`}>
             <PhotoContainer>
-              {proj.photos.map((photo, idx) => (
+              {proj.photos.map((photo, photoIdx) => (
                 <img
-                  key={idx}
+                  key={`${proj.title}_${photoIdx}`}
                   src={photo}
                   alt="포트폴리오 이미지"
                   onClick={() => {
@@ -48,13 +48,18 @@ function Portfolio() {
               <ul className="list-with-dash">
                 <li>
                   {proj.links.map((link) => (
-                    <a target="_blank" rel="noreferrer noopener" href={link.to}>
+                    <a
+                      key={`${proj.title}_${link.type}`}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      href={link.to}
+                    >
                       {link.type}
                     </a>
                   ))}
                 </li>
                 {proj.descriptions.map((description) => (
-                  <li>{description}</li>
+                  <li key={`${proj.title}_${description}`}>{description}</li>
                 ))}
               </ul>
               <ToggleList list={proj.details} />
@@ -130,3 +135,7 @@ const PhotoContainer = styled.article`
 const ExpContainer = styled.article`
   margin-top: 10px;
 `;
+
+// const PageBreak = styled.div`
+//   page-break-after: always;
+// `;

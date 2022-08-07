@@ -8,13 +8,13 @@ function ToggleList({ list = ['작성중입니다.'] }) {
   return (
     <Container>
       <Title onClick={handleToggle}>
-        <div>{isOn ? `▲` : `▼`}</div>
+        <p>{isOn ? `▲` : `▼`}</p>
         {isOn ? `Close` : `Open`}
       </Title>
       {isOn && (
         <List>
           {list.map((item) => (
-            <li>{item}</li>
+            <li key={item}>{item}</li>
           ))}
         </List>
       )}
@@ -28,9 +28,9 @@ const Container = styled.section`
   margin-top: 8px;
 `;
 
-const Title = styled.p`
+const Title = styled.div`
   cursor: pointer;
-  div {
+  p {
     display: inline-block;
     font-size: 0.6rem;
     width: 16px;
