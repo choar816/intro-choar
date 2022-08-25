@@ -3,6 +3,19 @@ import market2 from '../../public/assets/market-2.png';
 import market3 from '../../public/assets/market-3.png';
 import market4 from '../../public/assets/market-4.png';
 import market5 from '../../public/assets/market-5.png';
+import form1 from '../../public/assets/form1.png';
+import form2 from '../../public/assets/form2.png';
+import form3 from '../../public/assets/form3.png';
+import form4 from '../../public/assets/form4.png';
+import form5 from '../../public/assets/form5.png';
+import form6 from '../../public/assets/form6.png';
+import form7 from '../../public/assets/form7.png';
+import mine1 from '../../public/assets/mine1.png';
+import mine2 from '../../public/assets/mine2.png';
+import mine3 from '../../public/assets/mine3.png';
+import mine4 from '../../public/assets/mine4.png';
+import mine5 from '../../public/assets/mine5.png';
+import mine6 from '../../public/assets/mine6.png';
 import meow1 from '../../public/assets/meow-1.png';
 import meow2 from '../../public/assets/meow-2.png';
 import meow3 from '../../public/assets/meow-3.png';
@@ -94,6 +107,68 @@ const projectList = [
   },
   {
     lang: 'EN',
+    title: 'Ahra Forms',
+    summary: 'Project that cloned Google Forms',
+    descriptions: [
+      'Duration : 2022.08 (3 days)',
+      'Skills : React, JavaScript, Redux Toolkit, React Router, Ant Design',
+      'Role : Developed front-end (Please check GitHub README for details)',
+    ],
+    links: [
+      { type: 'Website', to: 'https://choar816.github.io/clone-google-forms/' },
+      { type: 'GitHub', to: 'https://github.com/choar816/clone-google-forms' },
+    ],
+    photos: [form1, form2, form3, form4, form5, form6, form7],
+  },
+  {
+    lang: 'KO',
+    title: 'Ahra Forms',
+    summary: 'Google Forms를 클론한 프로젝트',
+    descriptions: [
+      '진행 기간 : 2022.08 (3 days)',
+      '사용 기술 : React, JavaScript, Redux Toolkit, React Router, Ant Design',
+      '역할',
+    ],
+    details: ['GitHub README 참고 부탁드립니다.'],
+    links: [
+      { type: '웹사이트', to: 'https://choar816.github.io/clone-google-forms/' },
+      { type: '깃허브', to: 'https://github.com/choar816/clone-google-forms' },
+    ],
+    photos: [form1, form2, form3, form4, form5, form6, form7],
+  },
+  {
+    lang: 'EN',
+    title: 'Minesweeper',
+    summary: 'Puzzle video game where mines are scattered throughout a board, which is divided into cells.',
+    descriptions: [
+      'Duration : 2022.08 (3 days)',
+      'Skills : React, JavaScript, Redux Toolkit, Styled Components, Ant Design',
+      'Role : Developed front-end (Please check GitHub README for details)',
+    ],
+    links: [
+      { type: 'Website', to: 'https://choar816.github.io/clone-minesweeper/' },
+      { type: 'GitHub', to: 'https://github.com/choar816/clone-minesweeper' },
+    ],
+    photos: [mine1, mine2, mine3, mine4, mine5, mine6],
+  },
+  {
+    lang: 'KO',
+    title: '지뢰찾기',
+    summary: '지뢰가 랜덤하게 숨어있는 보드에서 지뢰가 아닌 칸만 열어야 하는 게임',
+    descriptions: [
+      '진행 기간 : 2022.08 (3 days)',
+      '사용 기술 : React, JavaScript, Redux Toolkit, Styled Components, Ant Design',
+      '역할',
+    ],
+    details: ['GitHub README 참고 부탁드립니다.'],
+    links: [
+      { type: '웹사이트', to: 'https://choar816.github.io/clone-minesweeper/' },
+      { type: '깃허브', to: 'https://github.com/choar816/clone-minesweeper' },
+    ],
+    photos: [mine1, mine2, mine3, mine4, mine5, mine6],
+  },
+  {
+    lang: 'EN',
     title: 'Meow Meow Fuzzyface',
     summary: 'Simple game inspired by Vampire Survivors',
     descriptions: [
@@ -112,7 +187,10 @@ const projectList = [
         type: 'Website(Lecture ver.)',
         to: 'https://weniv.github.io/game-with-phaser/',
       },
-      { type: 'GitHub(Lecture ver.)', to: 'https://github.com/weniv/game-with-phaser' },
+      {
+        type: 'GitHub(Lecture ver.)',
+        to: 'https://github.com/weniv/game-with-phaser',
+      },
     ],
     photos: [meow1, meow2, meow3, meow4, meow5],
   },
@@ -141,7 +219,10 @@ const projectList = [
         type: '웹사이트(강의버전)',
         to: 'https://weniv.github.io/game-with-phaser/',
       },
-      { type: '깃허브(강의버전)', to: 'https://github.com/weniv/game-with-phaser' },
+      {
+        type: '깃허브(강의버전)',
+        to: 'https://github.com/weniv/game-with-phaser',
+      },
     ],
     photos: [meow1, meow2, meow3, meow4, meow5],
   },
