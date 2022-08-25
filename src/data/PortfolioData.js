@@ -108,6 +108,11 @@ const projectList = [
         to: 'https://choar816.github.io/meow-meow-fuzzyface/',
       },
       { type: 'GitHub', to: 'https://github.com/choar816/meow-meow-fuzzyface' },
+      {
+        type: 'Website(Lecture ver.)',
+        to: 'https://weniv.github.io/game-with-phaser/',
+      },
+      { type: 'GitHub(Lecture ver.)', to: 'https://github.com/weniv/game-with-phaser' },
     ],
     photos: [meow1, meow2, meow3, meow4, meow5],
   },
@@ -132,6 +137,11 @@ const projectList = [
         to: 'https://choar816.github.io/meow-meow-fuzzyface/',
       },
       { type: '깃허브', to: 'https://github.com/choar816/meow-meow-fuzzyface' },
+      {
+        type: '웹사이트(강의버전)',
+        to: 'https://weniv.github.io/game-with-phaser/',
+      },
+      { type: '깃허브(강의버전)', to: 'https://github.com/weniv/game-with-phaser' },
     ],
     photos: [meow1, meow2, meow3, meow4, meow5],
   },

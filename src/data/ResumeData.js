@@ -34,11 +34,11 @@ const contactList = {
 
 const skillList = {
   EN: {
-    'Front-end': 'HTML, CSS, Sass/Scss, JavaScript, React',
+    'Front-end': 'HTML, CSS, Sass/Scss, JavaScript, React, Redux',
     Algorithm: 'C/C++, JavaScript',
   },
   KO: {
-    프론트엔드: 'HTML, CSS, Sass/Scss, JavaScript, React',
+    프론트엔드: 'HTML, CSS, Sass/Scss, JavaScript, React, Redux',
     알고리즘: 'C/C++, JavaScript',
   },
 };
@@ -79,47 +79,6 @@ const workList = [
     link: 'https://www.samsung.com/sec/',
     department: ', DS부문, DIT센터',
     description: ['안드로이드 어플리케이션 개발 (Java, XML)'],
-  },
-  {
-    lang: 'EN',
-    duration: '2019.06. - 2019.08.',
-    type: 'Intern',
-    title: 'Neuromeka',
-    link: 'https://www.neuromeka.com/',
-    department: ', R&D Department',
-    description: [
-      'Researched and made solutions on UI/UX of collaborative robots',
-    ],
-  },
-  {
-    lang: 'KO',
-    duration: '2019.06. - 2019.08.',
-    type: '인턴',
-    title: '뉴로메카',
-    link: 'https://www.neuromeka.com/',
-    department: ', 연구관리부서',
-    description: ['협동로봇 UI/UX 리서치 및 솔루션 제안'],
-  },
-  {
-    lang: 'EN',
-    duration: '2017.07. - 2017.07.',
-    type: 'Intern',
-    title: 'Dayli Intelligence',
-    link: 'https://dayliai.com/',
-    department: ', Blockchain Department',
-    description: [
-      'Researched on cryptocurrencies',
-      'Translated whitepapers (KOR↔ENG)',
-    ],
-  },
-  {
-    lang: 'KO',
-    duration: '2017.07. - 2017.07.',
-    type: '인턴',
-    title: '데일리인텔리전스',
-    link: 'https://dayliai.com/',
-    department: ', 블록체인본부',
-    description: ['가상화폐 리서치', '화이트페이퍼 번역 (한↔영)'],
   },
 ];
 
