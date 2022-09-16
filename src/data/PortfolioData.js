@@ -59,7 +59,7 @@ const projectList = [
     summary:
       'Open market platform where buyers can buy and sellers can register & sell products',
     descriptions: [
-      'Duration : 2022.04 ~ ing',
+      'Duration : 2022.04 ~ 08',
       'Skills : React, React Router, JavaScript, Styled Components',
       'Role : Developed front-end & integrated with back-end (API integration)',
     ],
@@ -79,7 +79,7 @@ const projectList = [
     summary:
       '판매자와 구매자를 구별하여 판매자가 상품을 등록, 판매하며 구매자는 구매하는 오픈마켓 플랫폼',
     descriptions: [
-      '진행 기간 : 2022.04 ~ ing',
+      '진행 기간 : 2022.04 ~ 08',
       '사용 기술 : React, React Router, JavaScript, Styled Components',
       '역할',
     ],
@@ -115,8 +115,8 @@ const projectList = [
       'Role : Developed front-end (Please check GitHub README for details)',
     ],
     links: [
-      { type: 'Website', to: 'https://choar816.github.io/clone-google-forms/' },
-      { type: 'GitHub', to: 'https://github.com/choar816/clone-google-forms' },
+      { type: 'Website', to: 'https://joe-brothers.com/clone-google-forms/' },
+      { type: 'GitHub', to: 'https://github.com/joe-brothers/clone-google-forms' },
     ],
     photos: [form1, form2, form3, form4, form5, form6, form7],
   },
@@ -131,8 +131,8 @@ const projectList = [
     ],
     details: ['GitHub README 참고 부탁드립니다.'],
     links: [
-      { type: '웹사이트', to: 'https://choar816.github.io/clone-google-forms/' },
-      { type: '깃허브', to: 'https://github.com/choar816/clone-google-forms' },
+      { type: '웹사이트', to: 'https://joe-brothers.com/clone-google-forms/' },
+      { type: '깃허브', to: 'https://github.com/joe-brothers/clone-google-forms' },
     ],
     photos: [form1, form2, form3, form4, form5, form6, form7],
   },
@@ -146,8 +146,8 @@ const projectList = [
       'Role : Developed front-end (Please check GitHub README for details)',
     ],
     links: [
-      { type: 'Website', to: 'https://choar816.github.io/clone-minesweeper/' },
-      { type: 'GitHub', to: 'https://github.com/choar816/clone-minesweeper' },
+      { type: 'Website', to: 'https://joe-brothers.com/clone-minesweeper/' },
+      { type: 'GitHub', to: 'https://github.com/joe-brothers/clone-minesweeper' },
     ],
     photos: [mine1, mine2, mine3, mine4, mine5, mine6],
   },
@@ -162,8 +162,8 @@ const projectList = [
     ],
     details: ['GitHub README 참고 부탁드립니다.'],
     links: [
-      { type: '웹사이트', to: 'https://choar816.github.io/clone-minesweeper/' },
-      { type: '깃허브', to: 'https://github.com/choar816/clone-minesweeper' },
+      { type: '웹사이트', to: 'https://joe-brothers.com/clone-minesweeper/' },
+      { type: '깃허브', to: 'https://github.com/joe-brothers/clone-minesweeper' },
     ],
     photos: [mine1, mine2, mine3, mine4, mine5, mine6],
   },
