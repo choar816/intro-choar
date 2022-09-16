@@ -16,7 +16,7 @@ const tabContents = [
   },
 ];
 
-const handleBackgroundColor = (type) => {
+const handleGradationColor = (type) => {
   switch (type) {
     case 'LIGHT':
       return `
@@ -47,8 +47,9 @@ function App() {
 
   return (
     <>
-      <Background isVisible={color === 'LIGHT'} type="LIGHT" />
-      <Background isVisible={color === 'DARK'} type="DARK" />
+      <Background />
+      <Gradation isVisible={color === 'LIGHT'} type="LIGHT" />
+      <Gradation isVisible={color === 'DARK'} type="DARK" />
       <HeaderContainer>
         <article className="container-lang">
           <button
@@ -116,14 +117,23 @@ const Background = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
-  content: '';
+  z-index: -20;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #7f3d91;
+`;
+const Gradation = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -10;
   display: block;
   width: 100%;
   height: 100%;
   transition: all 0.5s;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
-  background: ${({ type }) => handleBackgroundColor(type)};
+  background: ${({ type }) => handleGradationColor(type)};
 `;
 
 const TabContainer = styled.div`
