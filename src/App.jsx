@@ -22,16 +22,16 @@ const handleBackgroundColor = (type) => {
       return `
         linear-gradient(
           90deg,
-          rgba(169, 255, 229, 1) 0%,
-          rgba(168, 184, 255, 1) 100%
+          #FC466B 0%,
+          #3F5EFB 100%
         )
       `;
     case 'DARK':
       return `
         linear-gradient(
           90deg,
-          rgba(37, 179, 135, 1) 0%,
-          rgba(55, 88, 236, 1) 100%
+          #C33764 0%,
+          #1D2671 100%
         )
       `;
     default:
